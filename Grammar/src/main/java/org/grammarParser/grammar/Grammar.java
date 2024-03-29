@@ -15,13 +15,18 @@ import java.util.stream.Collectors;
 
 /**
  * Grammar class.
- * <p> This class represents a grammar. It contains a set of nonterminals, a set of terminals, and a start symbol.</p>
- *  <ul>
- *      <li>A : b C | B d;</li>
- *      <li>B : C C | b A;</li>
- *      <li>C : c C | {e};</li>
- *  </ul>
- *  <p>Starting symbol is just first character</p>
+ * <p>
+ * This class represents a grammar. It contains a set of nonterminals, a set of
+ * terminals, and a start symbol.
+ * </p>
+ * <ul>
+ * <li>A : b C | B d;</li>
+ * <li>B : C C | b A;</li>
+ * <li>C : c C | {e};</li>
+ * </ul>
+ * <p>
+ * Starting symbol is just first character
+ * </p>
  */
 @Slf4j
 @Getter
@@ -93,20 +98,19 @@ public class Grammar {
         }
     }
 
-    public String smarterDump(){
+    public String smarterDump() {
         return "Starting nonterminal: " + getStartSymbol() + "\n" +
                 "Terminals: " + getTerminals() + "\n" +
                 "Nonterminals: " + getNonTerminals() + "\n" +
                 "Rules: " + getRules().stream().map(Rule::toString).reduce("", (a, b) -> a + "\n- " + b);
     }
 
-    public Set<String> computeEmpty(){
+    public Set<String> computeEmpty() {
 
-        Set<String> empty=  nonTerminals.stream()
+        Set<String> empty = nonTerminals.stream()
                 .filter(nonterminal -> nonterminal.getRules().stream().anyMatch(Rule::hasEpsilon))
                 .map(Nonterminal::getName)
                 .collect(Collectors.toSet());
-
 
         log.debug("empty: {}", empty);
 
@@ -115,16 +119,17 @@ public class Grammar {
         do {
             changed = false;
             for (Nonterminal nonterminal : nonTerminals) {
-                if (empty.contains(nonterminal)) {
+                if (empty.contains(nonterminal.getName())) {
                     continue;
                 }
                 log.debug("Nonterminal: {}", nonterminal);
 
                 if (nonterminal.getRules().stream()
                         .anyMatch(rule -> rule.getRightHandSide().stream()
-                                //.peek(symbol -> log.debug("Symbol: {}", symbol))
-                                //.peek(symbol -> log.debug("Empty: {}", empty))
-                                //.peek(symbol-> log.debug("empty contains symbol?: {}", empty.contains(symbol.getName())))
+                                // .peek(symbol -> log.debug("Symbol: {}", symbol))
+                                // .peek(symbol -> log.debug("Empty: {}", empty))
+                                // .peek(symbol-> log.debug("empty contains symbol?: {}",
+                                // empty.contains(symbol.getName())))
                                 .allMatch(symbol -> symbol instanceof Epsilon || empty.contains(symbol.getName())))) {
 
                     if (empty.contains(nonterminal.getName()))
@@ -135,13 +140,12 @@ public class Grammar {
                 }
             }
 
-        }while (changed);
+        } while (changed);
 
-    return empty;
+        return empty;
     }
 
-
-    public void getfirst(){
+    public void getFirst() {
         Map<Nonterminal, Set<Terminal>> first = new HashMap<>();
         for (Nonterminal nonterminal : nonTerminals) {
             first.put(nonterminal, new HashSet<>());
@@ -162,33 +166,25 @@ public class Grammar {
                         }
 
                         if (symbol instanceof Nonterminal nonterminal1) {
-                            //Rekurzivně vypočti množiny first všech pravých stran tohoto neterminálu.
-                            //Výsledky spoj do jedné množiny.
-                            //Pokud tato množina obsahuje epsilon, tak jej odeber.
-                            //Výsledek přidej do množiny first.
 
-                            log.trace("adding nonterminal: {} to {}", nonterminal1, nonterminal);
-                            log.trace("First: {}", first.get(nonterminal1));
-                            if (first.get(nonterminal1) == null) {
-                                log.trace("First is null");
+                            var firstof = this.nonTerminals.stream()
+                                    .filter(nt -> nt.getName().equals(nonterminal1.getName()))
+                                    .findFirst()
+                                    .map(first::get)
+                                    .orElseThrow();
+
+                            log.trace("finding nonterminal of: {}", nonterminal1);
+                            log.trace("First: {}", firstof);
+
+                            if (firstof instanceof Terminal term) {
+                                log.trace("\tFirst is terminal: {}", term);
+                                changed |= first.get(nonterminal).add(term);
+                                break;
                             } else {
-                                // by recursion
-                                log.trace("\tFirst is not null");
-                                changed |= first.get(nonterminal).addAll(first.get(nonterminal1).stream()
-                                        .filter(terminal -> !(terminal instanceof Epsilon))
-                                        .collect(Collectors.toSet()));
-                                log.trace("\t\tFirst: {}", first.get(nonterminal));
-                                if (!first.get(nonterminal1).contains(new Epsilon())) {
-                                    break;
-                                }
+                                log.trace("\tFirst is nonterminal: {}", firstof);
+                                changed |= first.get(nonterminal).addAll(firstof);
                             }
 
-                        }
-
-                        if (symbol instanceof Epsilon) {
-                            log.trace("Epsilon");
-                            changed |= first.get(nonterminal).add(new Terminal(symbol.getName())) ;
-                            break;
                         }
                     }
                 }
@@ -197,7 +193,5 @@ public class Grammar {
 
         log.debug("First: {}", first);
     }
-
-
 
 }

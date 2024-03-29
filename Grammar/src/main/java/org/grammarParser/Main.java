@@ -27,14 +27,14 @@ public class Main {
 
         log.info("nonterminals which can be empty {}", grammar.computeEmpty());
 
-        //grammar.getfirst();
+        grammar.getFirst();
 
-//        GrammarOps go = new GrammarOps(grammar);
-//
-//        /* first step, computing nonterminals that can generate empty word */
-//        for (Nonterminal nt : go.getEmptyNonterminals()) {
-//            System.out.print(nt.getName() + " ");
-//        }
-//        System.out.println();
+        // GrammarOps go = new GrammarOps(grammar);
+        //
+        // /* first step, computing nonterminals that can generate empty word */
+        // for (Nonterminal nt : go.getEmptyNonterminals()) {
+        // System.out.print(nt.getName() + " ");
+        // }
+        // System.out.println();
     }
 }
