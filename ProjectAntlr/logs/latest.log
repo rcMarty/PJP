@@ -1,55 +1,7 @@
-2024-03-26 16:54:07 | ERROR | org.parser.Main : File test.txt not found
-2024-03-26 16:58:34 | ERROR | org.parser.Main : File test.txt not found
-2024-03-26 16:59:05 | ERROR | org.parser.Main : File test.txt not found
-2024-03-26 16:59:43 | ERROR | org.parser.Main : File test.txt not found
-2024-03-26 17:00:06 | ERROR | org.parser.Main : File input.txt not found
-2024-03-26 17:01:51 | ERROR | org.parser.Main : File input.txt not found
-2024-03-26 17:03:44 | INFO | org.parser.Main : Start parsing
-2024-03-26 17:03:44 | INFO | org.parser.Main : End parsing prog
-2024-03-26 17:13:04 | INFO | org.parser.Main : Start parsing
-2024-03-26 17:13:04 | ERROR | org.parser.Main : Syntax errors found
-2024-03-26 17:13:04 | ERROR | org.parser.Main : org.antlr.v4.runtime.ConsoleErrorListener@67a20f67
-2024-03-26 17:23:38 | INFO | org.parser.Main : Start parsing
-2024-03-26 17:23:38 | ERROR | org.parser.Main : Syntax errors found
-2024-03-26 17:23:38 | INFO | org.parser.Main : End parsing prog
-2024-03-26 17:25:02 | INFO | org.parser.Main : Start parsing
-2024-03-26 17:25:02 | ERROR | org.parser.Main : Syntax errors found
-2024-03-26 17:25:02 | ERROR | org.parser.Main : End parsing errors: prog
-2024-03-26 17:34:48 | INFO | org.parser.Main : Start parsing
-2024-03-26 17:34:48 | ERROR | org.parser.Main : Syntax errors found
-2024-03-26 17:34:48 | ERROR | org.parser.Main : [SYNTAX ERROR]	line 1:0 mismatched input '<EOF>' expecting {'(', ID, INT, NEWLINE}
-2024-03-26 17:36:14 | INFO | org.parser.Main : Start parsing
-2024-03-26 17:36:14 | ERROR | org.parser.Main : Syntax errors found
-2024-03-26 17:36:14 | ERROR | org.parser.Main : [SYNTAX ERROR]	line 1:29 no viable alternative at input 'sdfghjkiuztrewasdfghjfghjk'
-2024-03-26 17:36:14 | ERROR | org.parser.Main : [SYNTAX ERROR]	line 1:57 extraneous input '+' expecting {'(', ID, INT}
-2024-03-26 17:36:14 | ERROR | org.parser.Main : [SYNTAX ERROR]	line 1:68 extraneous input '+' expecting {'(', ID, INT}
-2024-03-26 17:36:14 | ERROR | org.parser.Main : [SYNTAX ERROR]	line 1:72 mismatched input '<EOF>' expecting {'(', ID, INT}
-2024-03-26 17:45:30 | INFO | org.parser.Main : Start parsing
-2024-03-26 17:45:30 | ERROR | org.parser.Main : Syntax errors found
-2024-03-26 17:45:30 | ERROR | org.parser.Main : [SYNTAX ERROR]	line 1:8 missing NEWLINE at '2'
-2024-03-26 17:45:30 | ERROR | org.parser.Main : [SYNTAX ERROR]	line 1:14 mismatched input 'xff' expecting {'*', '/', '+', '-', ')'}
-2024-03-26 17:45:30 | ERROR | org.parser.Main : [SYNTAX ERROR]	line 1:19 extraneous input ')' expecting NEWLINE
-2024-03-26 17:45:30 | ERROR | org.parser.Main : [SYNTAX ERROR]	line 2:1 missing NEWLINE at 'x'
-2024-03-26 17:45:30 | ERROR | org.parser.Main : [SYNTAX ERROR]	line 2:4 missing NEWLINE at 'e'
-2024-03-26 17:45:30 | ERROR | org.parser.Main : [SYNTAX ERROR]	line 2:8 missing NEWLINE at 'x'
-2024-03-26 17:45:30 | ERROR | org.parser.Main : [SYNTAX ERROR]	line 2:13 missing NEWLINE at '<EOF>'
-2024-03-26 17:57:18 | INFO | org.parser.Main : Start parsing
-2024-03-26 17:57:18 | ERROR | org.parser.Main : Syntax errors found
-2024-03-26 17:57:18 | ERROR | org.parser.Main : [SYNTAX ERROR]	line 1:8 missing NEWLINE at '2'
-2024-03-26 17:57:18 | ERROR | org.parser.Main : [SYNTAX ERROR]	line 1:14 mismatched input 'xff' expecting {'*', '/', '+', '-', ')'}
-2024-03-26 17:57:18 | ERROR | org.parser.Main : [SYNTAX ERROR]	line 1:19 extraneous input ')' expecting NEWLINE
-2024-03-26 17:57:18 | ERROR | org.parser.Main : [SYNTAX ERROR]	line 2:1 missing NEWLINE at 'x'
-2024-03-26 17:57:18 | ERROR | org.parser.Main : [SYNTAX ERROR]	line 2:4 missing NEWLINE at 'e'
-2024-03-26 17:57:18 | ERROR | org.parser.Main : [SYNTAX ERROR]	line 2:8 missing NEWLINE at 'x'
-2024-03-26 17:57:18 | ERROR | org.parser.Main : [SYNTAX ERROR]	line 2:13 missing NEWLINE at '<EOF>'
-2024-03-26 18:00:24 | INFO | org.parser.Main : Start parsing
-2024-03-26 18:00:24 | ERROR | org.parser.Main : Syntax errors found
-2024-03-26 18:00:24 | ERROR | org.parser.Main : [SYNTAX ERROR]	line 1:8 missing NEWLINE at '2'
-2024-03-26 18:00:24 | ERROR | org.parser.Main : [SYNTAX ERROR]	line 1:14 mismatched input 'xff' expecting {'*', '/', '+', '-', ')'}
-2024-03-26 18:00:24 | ERROR | org.parser.Main : [SYNTAX ERROR]	line 1:19 extraneous input ')' expecting NEWLINE
-2024-03-26 18:00:24 | ERROR | org.parser.Main : [SYNTAX ERROR]	line 2:1 missing NEWLINE at 'x'
-2024-03-26 18:00:24 | ERROR | org.parser.Main : [SYNTAX ERROR]	line 2:4 missing NEWLINE at 'e'
-2024-03-26 18:00:24 | ERROR | org.parser.Main : [SYNTAX ERROR]	line 2:8 missing NEWLINE at 'x'
-2024-03-26 18:00:24 | ERROR | org.parser.Main : [SYNTAX ERROR]	line 2:13 missing NEWLINE at '<EOF>'
-2024-03-26 18:05:00 | INFO | org.parser.Main : Start parsing
-2024-03-26 18:05:01 | INFO | org.parser.Main : End parsing (prog (expr (expr 012) - (expr 10)) ; (expr (expr 2) * (expr ( (expr (expr 0xff) + (expr 5)) ))) ; (expr (expr 0x23e5) - (expr 0x201)) ;)
+2024-03-31 16:42:22 | INFO | org.parser.Main : Start parsing
+2024-03-31 16:42:22 | ERROR | org.parser.Main : Syntax errors found
+2024-03-31 16:42:22 | ERROR | org.parser.Main : [FULL CONTEXT]	line 16:0 Attempting full context
+2024-03-31 16:42:22 | ERROR | org.parser.Main : [CONTEXT SENSITIVITY]	line 16:0 Context sensitivity found
+2024-03-31 16:42:22 | ERROR | org.parser.Main : [SYNTAX ERROR]	line 27:0 missing ';' at '}'
+2024-03-31 16:42:53 | INFO | org.parser.Main : Start parsing
+2024-03-31 16:42:53 | INFO | org.parser.Main : End parsing (prog (stat (writeStat write (expr "<Relational operators>")) ;) (stat (writeStat write (expr "1<5: ") , (expr (expr 1) < (expr 5))) ;) (stat (writeStat write (expr "1>3.5: ") , (expr (expr 1) > (expr 3.5))) ;) (stat (writeStat write (expr "aa==aa: ") , (expr (expr "aa") == (expr "aa"))) ;) (stat (writeStat write (expr "aa==ab: ") , (expr (expr "aa") == (expr "ab"))) ;) (stat (writeStat write (expr "aa!=ab: ") , (expr (expr "aa") != (expr "ab"))) ;) (stat (writeStat write (expr "")) ;) (stat (writeStat write (expr "<Logic operators>")) ;) (stat (writeStat write (expr "false and true (false):") , (expr (expr false) && (expr true))) ;) (stat (writeStat write (expr "false or true (true):") , (expr (expr false) || (expr true))) ;) (stat (writeStat write (expr "not 1==2 (true):") , (expr ! (expr ( (expr (expr 1) == (expr 2)) )))) ;) (stat (writeStat write (expr "true or false and true (true):") , (expr (expr (expr true) || (expr false)) && (expr true))) ;) (stat ;) (stat (ifStat if ( (expr (expr 3) < (expr 4)) ) (stat (writeStat write (expr "condition was true")) ;) else (stat (writeStat write (expr "condition was false")) ;))) (stat (ifStat if ( (expr (expr 3) < (expr 4)) ) (stat (writeStat write (expr "condition was true")) ;))) (stat (ifStat if ( (expr true) ) (stat { (stat (writeStat write (expr "reee")) ;) (stat (readStat read a , b) ;) (stat (writeStat write (expr a) , (expr b)) ;) }))) <EOF>)

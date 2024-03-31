@@ -2,7 +2,8 @@ package org.parser;
 
 import org.antlr.v4.runtime.*;
 import org.antlr.v4.runtime.tree.*;
-import org.antlr4.Lab7.*;
+//import org.antlr4.Lab7.*;
+import org.antlr4.projexpr.*;
 
 import lombok.extern.slf4j.Slf4j;
 import org.parser.errors.AntlrErrorListener;
@@ -18,6 +19,8 @@ public class Main {
         String filename = "input.txt";
         CharStream input = null;
 
+
+
         try {
             InputStream file = Main.class.getClassLoader().getResourceAsStream(""+filename);
             if (file == null) {
@@ -30,9 +33,9 @@ public class Main {
         }
 
 
-        var lexer = new Lab7ExprLexer(input);
+        var lexer = new ProjExprLexer(input);
         var tokens = new CommonTokenStream(lexer);
-        var parser = new Lab7ExprParser(tokens);
+        var parser = new ProjExprParser(tokens);
 
         AntlrErrorListener errorListener = new AntlrErrorListener();
         parser.removeErrorListeners();
@@ -51,10 +54,6 @@ public class Main {
         }
 
         log.info("End parsing {}", tree.toStringTree(parser));
-
-        ParseTreeWalker walker = new ParseTreeWalker();
-        walker.walk(new Lab7ExprBaseListener(), tree);
-
         
 
     }
