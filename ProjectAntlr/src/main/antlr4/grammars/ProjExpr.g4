@@ -3,7 +3,7 @@ grammar ProjExpr;
 prog: (stat )+ EOF;
 
 stat: '{' stat* '}'
-    |writeStat ';'
+    | writeStat ';'
     | declareStat ';'
     | assignStat ';'
     | readStat ';'
@@ -15,19 +15,28 @@ stat: '{' stat* '}'
 writeStat: 'write' expr? (',' expr)* ;
 readStat: 'read' ID (',' ID)* ;
 
-declareStat: dataType ID (',' ID)* ;
 assignStat: ID '=' expr ;
+
+declareStat: dataType ID (',' ID)* ;
+dataType: 'int'
+        | 'float'
+        | 'string'
+        | 'bool'
+        ;
 
 CommentStat: '//' .*? '\n' -> skip;
 
-expr: expr op=('*'|'/'|'%') expr        # arithmetic
-    | expr op=('+'|'-') expr            # arithmetic
-    | expr op=('<'|'>'|'=='|'!=') expr  # comparison
-    | expr op=('&&'|'||') expr          # logic
-    | '!' expr                          # logic
-    | expr '.' expr                     # concat
+expr: '-' expr                          # unaryMinus
+    | '!' expr                          # negation
+    | expr op=('*'|'/'|'%') expr        # arithmetic
+    | expr op=('+'|'-'|'.') expr        # arithmetic
+    | expr op=('<'|'>') expr            # comparison
+    | expr op=('=='|'!=') expr          # comparison
+    | expr '&&' expr                    # logicAnd
+    | expr '||' expr                    # logicOr
     | '(' expr ')'                      # parens
-    | ID                                # variable
+    | ID '=' expr                       # assign
+    | ID                                # id
     | INT                               # int
     | FLOAT                             # float
     | STRING                            # string
@@ -38,15 +47,9 @@ ifStat: 'if' '(' expr ')' stat ('else' stat)? ;
 
 whileStat: 'while' '(' expr ')' stat ;
 
-dataType: 'int'
-        | 'float'
-        | 'string'
-        | 'bool'
-        ;
-
 ID : [a-zA-Z][a-zA-Z0-9]* ;
-INT : '-'? [0-9]+ ;
-FLOAT : '-'? [0-9]+ '.' [0-9]+ ;
+INT : [0-9]+ ;
+FLOAT : [0-9]+ '.' [0-9]+ ;
 STRING : '"' ~'"'* '"';
 BOOL : 'true' | 'false';
 WS : [ \t\r\n]+ -> skip ;
