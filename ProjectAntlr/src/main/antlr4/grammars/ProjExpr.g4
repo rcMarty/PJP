@@ -5,7 +5,8 @@ prog: (stat )+ EOF;
 stat: '{' stat* '}'
     | writeStat ';'
     | declareStat ';'
-    | assignStat ';'
+//    | assignStat ';'
+    | expr ';'
     | readStat ';'
     | ifStat
     | whileStat
@@ -30,7 +31,7 @@ expr: '-' expr                          # unaryMinus
     | '!' expr                          # negation
     | expr op=('*'|'/'|'%') expr        # arithmetic
     | expr op=('+'|'-'|'.') expr        # arithmetic
-    | expr op=('<'|'>') expr            # comparison
+    | expr op=('<'|'>') expr            # relational
     | expr op=('=='|'!=') expr          # comparison
     | expr '&&' expr                    # logicAnd
     | expr '||' expr                    # logicOr
