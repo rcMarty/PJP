@@ -7,6 +7,7 @@ import org.antlr4.projexpr.*;
 
 import lombok.extern.slf4j.Slf4j;
 import org.parser.errors.AntlrErrorListener;
+import org.parser.typecheck.TypeCheckVisitor;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -16,7 +17,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        String filename = "input.txt";
+        String filename = "parsingtesting.txt";
         CharStream input = null;
 
 
@@ -54,7 +55,15 @@ public class Main {
         }
 
         log.info("End parsing {}", tree.toStringTree(parser));
-        
+
+
+        //TODO implement typechecking
+        // visitor nebo listener
+
+        TypeCheckVisitor typecheck = new TypeCheckVisitor();
+        typecheck.visit(tree);
+        typecheck.getErrorLogger().getErrors().forEach(log::error);
+
 
     }
 }
