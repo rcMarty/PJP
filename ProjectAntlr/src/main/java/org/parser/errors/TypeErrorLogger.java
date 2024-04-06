@@ -64,7 +64,7 @@ public class TypeErrorLogger {
     public List<String> getErrors() {
         List<String> allErrors = new ArrayList<>();
         for (String error : assignErrors) {
-            allErrors.add(formatError(AnsiiColors.ANSI_BLUE+"[ASSIGN ERROR]"+ AnsiiColors.ANSI_RESET, error));
+            allErrors.add(formatError(AnsiiColors.ANSI_GREEN+"[ASSIGN ERROR]"+ AnsiiColors.ANSI_RESET, error));
         }
         for (String error : typeErrors) {
             allErrors.add(formatError(AnsiiColors.ANSI_CYAN+"[TYPE ERROR]"+ AnsiiColors.ANSI_RESET, error));

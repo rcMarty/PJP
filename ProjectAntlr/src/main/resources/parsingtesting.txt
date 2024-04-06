@@ -19,3 +19,6 @@ y = 10;
 
 write "21) + wont work with strings";
 write "x+y", "x"+"y";
+
+write "24) missing declaration";
+write "z=10: ", z;
