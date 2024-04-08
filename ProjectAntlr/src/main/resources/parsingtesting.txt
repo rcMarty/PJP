@@ -22,3 +22,7 @@ write "x+y", "x"+"y";
 
 write "24) missing declaration";
 write "z=10: ", z;
+
+
+float a,b,c,d;
+a = b= c=d = 1;

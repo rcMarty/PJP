@@ -123,8 +123,10 @@ public class TypeCheckVisitor extends ProjExprBaseVisitor<Types> {
     }
     @Override public Types visitAssign(ProjExprParser.AssignContext ctx) {
         log.trace("{}Visiting \t      "+ AnsiiColors.ANSI_YELLOW +"assigment"+AnsiiColors.ANSI_RESET, "    ".repeat(ctx.depth()));
+
         String id = ctx.ID().getText();
         Symbol symbol = symbolTable.getSymbol(id).orElse(new Symbol(id, Types.ERROR));
+
         if (symbol.getType() == Types.ERROR) {
             errorLogger.addError(ctx,ctx.ID().getSymbol(),"Variable " + id + " not declared", TypeErrorLogger.ErrorType.ASSIGN);
             return Types.ERROR;
@@ -139,6 +141,7 @@ public class TypeCheckVisitor extends ProjExprBaseVisitor<Types> {
             errorLogger.addError(ctx,ctx.getStart(),"Cannot assign " + type + " to " + symbol.getType(), TypeErrorLogger.ErrorType.ASSIGN);
             return Types.ERROR;
         }
+
         return type;
     }
 

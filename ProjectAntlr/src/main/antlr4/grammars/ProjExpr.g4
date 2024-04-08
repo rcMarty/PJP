@@ -41,7 +41,7 @@ expr: '-' expr                          # unaryMinus
     | expr '&&' expr                    # logicAnd
     | expr '||' expr                    # logicOr
     | '(' expr ')'                      # parens
-    | ID '=' expr                       # assign
+    | <assoc=right> ID '=' expr         # assign
     | INT                               # int
     | FLOAT                             # float
     | STRING                            # string
