@@ -14,6 +14,7 @@ public class Symbol {
         this.type = type;
         this.value = type.getDefaultValue();
     }
+
     public void setName(String name) {
         this.name = name.trim();
     }

@@ -1,11 +1,10 @@
 package org.parser.errors;
 import org.antlr.v4.runtime.ANTLRErrorListener;
-import org.antlr.v4.runtime.BaseErrorListener;
 import org.antlr.v4.runtime.RecognitionException;
 import org.antlr.v4.runtime.Recognizer;
 
-import java.util.List;
 import java.util.ArrayList;
+import java.util.List;
 
 public class AntlrErrorListener implements ANTLRErrorListener {
 

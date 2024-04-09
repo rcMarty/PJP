@@ -1,6 +1,5 @@
 package org.parser.typecheck;
 import lombok.Data;
-import org.parser.errors.SymbolException;
 
 import java.util.HashMap;
 import java.util.Optional;
