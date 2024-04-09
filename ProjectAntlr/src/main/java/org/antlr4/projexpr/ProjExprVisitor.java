@@ -1,4 +1,4 @@
-// Generated from /home/rc_marty/OneDrive/Dokumenty/_Škola/6_Semestr/PJP/ProjectAntlr/src/main/antlr4/grammars/ProjExpr.g4 by ANTLR 4.13.1
+// Generated from /home/rc_marty/6_Semestr/PJP/ProjectAntlr/src/main/antlr4/grammars/ProjExpr.g4 by ANTLR 4.13.1
 package org.antlr4.projexpr;
 import org.antlr.v4.runtime.tree.ParseTreeVisitor;
 
@@ -122,12 +122,6 @@ public interface ProjExprVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitLiterals(ProjExprParser.LiteralsContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link ProjExprParser#condition}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitCondition(ProjExprParser.ConditionContext ctx);
-	/**
 	 * Visit a parse tree produced by the {@code negation}
 	 * labeled alternative in {@link ProjExprParser#expr}.
 	 * @param ctx the parse tree
@@ -233,10 +227,23 @@ public interface ProjExprVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitModulo(ProjExprParser.ModuloContext ctx);
 	/**
+	 * Visit a parse tree produced by the {@code ternary}
+	 * labeled alternative in {@link ProjExprParser#expr}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitTernary(ProjExprParser.TernaryContext ctx);
+	/**
 	 * Visit a parse tree produced by the {@code assign}
 	 * labeled alternative in {@link ProjExprParser#expr}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
 	T visitAssign(ProjExprParser.AssignContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link ProjExprParser#condition}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitCondition(ProjExprParser.ConditionContext ctx);
 }

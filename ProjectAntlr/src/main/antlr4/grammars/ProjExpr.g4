@@ -27,7 +27,7 @@ literals: 'int'
         | 'bool'
         ;
 
-condition: expr ;
+
 
 
 expr: '-' expr                          # unaryMinus
@@ -41,6 +41,7 @@ expr: '-' expr                          # unaryMinus
     | expr '&&' expr                    # logicAnd
     | expr '||' expr                    # logicOr
     | '(' expr ')'                      # parens
+    | <assoc=right> expr '?' expr ':' expr   # ternary
     | <assoc=right> ID '=' expr         # assign
     | INT                               # int
     | FLOAT                             # float
@@ -49,6 +50,8 @@ expr: '-' expr                          # unaryMinus
     | ID                                # id
     ;
 
+
+condition: expr ;
 
 INT : [0-9]+ ;
 FLOAT : [0-9]+ '.' [0-9]+ ;

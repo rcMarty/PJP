@@ -16,6 +16,9 @@ public class TypeCheckVisitor extends ProjExprBaseVisitor<Types> {
     @Getter
     private final TypeErrorLogger errorLogger = TypeErrorLogger.getInstance();
 
+    //visitor by mohl vygenerovat instrukce
+
+
     // OPERATOR
     @Override public Types visitLogicAnd(ProjExprParser.LogicAndContext ctx) {
         log.trace("{}Visiting \tlogical "+ AnsiiColors.ANSI_YELLOW +"and"+AnsiiColors.ANSI_RESET, "    ".repeat(ctx.depth()));
@@ -98,15 +101,20 @@ public class TypeCheckVisitor extends ProjExprBaseVisitor<Types> {
         log.trace("{}Visiting \toperation "+ AnsiiColors.ANSI_YELLOW +ctx.op.getText()+AnsiiColors.ANSI_RESET, "    ".repeat(ctx.depth()));
         Types left = visit(ctx.expr(0));
         Types right = visit(ctx.expr(1));
+
+        //allow float and int mixed
+        if (left == Types.FLOAT && right == Types.INT || left == Types.INT && right == Types.FLOAT) {
+            return Types.BOOL;
+        }
+
         if (left != right) {
             errorLogger.addError(ctx,ctx.getStart(),"Comparison operations can only be applied to the same types", TypeErrorLogger.ErrorType.TYPE);
             return Types.ERROR;
         }
-        if (left == Types.BOOL) {
-            errorLogger.addError(ctx,ctx.getStart(),"Comparison operations can only be applied to integers and floats", TypeErrorLogger.ErrorType.TYPE);
-            return Types.ERROR;
-        }
-        return left;
+
+        return Types.BOOL;
+
+
     }
     @Override public Types visitRelational(ProjExprParser.RelationalContext ctx) {
         log.trace("{}Visiting \toperation "+ AnsiiColors.ANSI_YELLOW +ctx.op.getText()+AnsiiColors.ANSI_RESET, "    ".repeat(ctx.depth()));
@@ -116,10 +124,11 @@ public class TypeCheckVisitor extends ProjExprBaseVisitor<Types> {
             errorLogger.addError(ctx,ctx.getStart(),"Relational operations can only be applied to integers and floats", TypeErrorLogger.ErrorType.TYPE);
             return Types.ERROR;
         }
-        if (left == Types.FLOAT || right == Types.FLOAT) {
-            return Types.FLOAT;
-        }
-        return Types.INT;
+//        if (left == Types.FLOAT || right == Types.FLOAT) {
+//            return Types.FLOAT;
+//        }
+//        return Types.INT;
+        return Types.BOOL;
     }
     @Override public Types visitAssign(ProjExprParser.AssignContext ctx) {
         log.trace("{}Visiting \t      "+ AnsiiColors.ANSI_YELLOW +"assigment"+AnsiiColors.ANSI_RESET, "    ".repeat(ctx.depth()));
@@ -143,6 +152,34 @@ public class TypeCheckVisitor extends ProjExprBaseVisitor<Types> {
         }
 
         return type;
+    }
+
+    @Override public Types visitTernary(ProjExprParser.TernaryContext ctx) {
+        log.trace("{}Visiting \toperation "+ AnsiiColors.ANSI_YELLOW +"ternary"+AnsiiColors.ANSI_RESET, "    ".repeat(ctx.depth()));
+        Types condition = visit(ctx.expr(0));
+        Types left = visit(ctx.expr(1));
+        Types right = visit(ctx.expr(2));
+        if (condition != Types.BOOL) {
+            errorLogger.addError(ctx,ctx.getStart(),"Ternary condition must be a boolean", TypeErrorLogger.ErrorType.CONDITION);
+            return Types.ERROR;
+        }
+
+        if(left == Types.ERROR || right == Types.ERROR) {
+            return Types.ERROR;
+        }
+
+        //allow float and int to be mixed
+        if (left == Types.FLOAT && right == Types.INT || left == Types.INT && right == Types.FLOAT) {
+            return Types.FLOAT;
+        }
+
+        if (left != right) {
+            errorLogger.addError(ctx,ctx.getStart(),"Ternary expressions must have the same type", TypeErrorLogger.ErrorType.TYPE);
+            return Types.ERROR;
+        }
+
+
+        return left;
     }
 
 
@@ -179,6 +216,10 @@ public class TypeCheckVisitor extends ProjExprBaseVisitor<Types> {
         return symbol.getType();
     }
 
+    @Override public Types visitParens(ProjExprParser.ParensContext ctx) {
+        log.trace("{}Visiting \t         "+ AnsiiColors.ANSI_YELLOW +"parenthesis"+AnsiiColors.ANSI_RESET, "    ".repeat(ctx.depth()));
+        return visit(ctx.expr());
+    }
 
 
     // LITERALS

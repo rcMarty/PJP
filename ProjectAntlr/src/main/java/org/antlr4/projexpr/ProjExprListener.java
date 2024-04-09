@@ -1,4 +1,4 @@
-// Generated from /home/rc_marty/OneDrive/Dokumenty/_Škola/6_Semestr/PJP/ProjectAntlr/src/main/antlr4/grammars/ProjExpr.g4 by ANTLR 4.13.1
+// Generated from /home/rc_marty/6_Semestr/PJP/ProjectAntlr/src/main/antlr4/grammars/ProjExpr.g4 by ANTLR 4.13.1
 package org.antlr4.projexpr;
 import org.antlr.v4.runtime.tree.ParseTreeListener;
 
@@ -196,16 +196,6 @@ public interface ProjExprListener extends ParseTreeListener {
 	 */
 	void exitLiterals(ProjExprParser.LiteralsContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link ProjExprParser#condition}.
-	 * @param ctx the parse tree
-	 */
-	void enterCondition(ProjExprParser.ConditionContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link ProjExprParser#condition}.
-	 * @param ctx the parse tree
-	 */
-	void exitCondition(ProjExprParser.ConditionContext ctx);
-	/**
 	 * Enter a parse tree produced by the {@code negation}
 	 * labeled alternative in {@link ProjExprParser#expr}.
 	 * @param ctx the parse tree
@@ -386,6 +376,18 @@ public interface ProjExprListener extends ParseTreeListener {
 	 */
 	void exitModulo(ProjExprParser.ModuloContext ctx);
 	/**
+	 * Enter a parse tree produced by the {@code ternary}
+	 * labeled alternative in {@link ProjExprParser#expr}.
+	 * @param ctx the parse tree
+	 */
+	void enterTernary(ProjExprParser.TernaryContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code ternary}
+	 * labeled alternative in {@link ProjExprParser#expr}.
+	 * @param ctx the parse tree
+	 */
+	void exitTernary(ProjExprParser.TernaryContext ctx);
+	/**
 	 * Enter a parse tree produced by the {@code assign}
 	 * labeled alternative in {@link ProjExprParser#expr}.
 	 * @param ctx the parse tree
@@ -397,4 +399,14 @@ public interface ProjExprListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitAssign(ProjExprParser.AssignContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link ProjExprParser#condition}.
+	 * @param ctx the parse tree
+	 */
+	void enterCondition(ProjExprParser.ConditionContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link ProjExprParser#condition}.
+	 * @param ctx the parse tree
+	 */
+	void exitCondition(ProjExprParser.ConditionContext ctx);
 }

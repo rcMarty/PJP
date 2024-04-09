@@ -158,3 +158,1281 @@
 					  - statement: write "x+y", "x"+"y";
 					                            ^
 					 
+2024-04-09 09:10:21 | INFO | org.parser.Main : Start parsing
+2024-04-09 09:10:21 | INFO | org.parser.Main : End parsing (prog (stat (writeStat write (expr "<Testing errors>")) ;) (stat (writeStat write (expr "4) mod used with float")) ;) (stat (writeStat write (expr "20 mod 3.0: ") , (expr (expr 20) % (expr 3.0))) ;) (stat (writeStat write (expr "8) assignment of float to int")) ;) (stat (declareStat (literals int) x) ;) (stat (expr x = (expr 13.25)) ;) (stat (writeStat write (expr "x=13.25: ") , (expr x)) ;) (stat (writeStat write (expr "12) . only for strings")) ;) (stat (writeStat write (expr "abc+10: ") , (expr (expr "abc") . (expr 10))) ;) (stat (writeStat write (expr "15) multiple declarations")) ;) (stat (declareStat (literals float) x) ;) (stat (writeStat write (expr "18) missing declaration")) ;) (stat (expr y = (expr 10)) ;) (stat (writeStat write (expr "21) + wont work with strings")) ;) (stat (writeStat write (expr "x+y") , (expr (expr "x") + (expr "y"))) ;) (stat (writeStat write (expr "24) missing declaration")) ;) (stat (writeStat write (expr "z=10: ") , (expr z)) ;) (stat (declareStat (literals float) a , b , c , d) ;) (stat (expr a = (expr b = (expr c = (expr d = (expr 1))))) ;) <EOF>)
+2024-04-09 09:10:21 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:10:21 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:10:21 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:10:21 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	operation [33mmodulo[0m
+2024-04-09 09:10:21 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	literal [33mInteger[0m
+2024-04-09 09:10:21 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	literal [33mFloat[0m
+2024-04-09 09:10:21 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:10:21 | TRACE | o.p.typecheck.TypeCheckVisitor :             Visiting 	         [33mdeclaration[0m
+2024-04-09 09:10:21 | TRACE | o.p.typecheck.TypeCheckVisitor :             Visiting 	      [33massigment[0m
+2024-04-09 09:10:21 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mFloat[0m
+2024-04-09 09:10:21 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:10:21 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	     [33midentifier[0m
+2024-04-09 09:10:21 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:10:21 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:10:21 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	operation [33mconcatenation[0m
+2024-04-09 09:10:21 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	literal [33mString[0m
+2024-04-09 09:10:21 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	literal [33mInteger[0m
+2024-04-09 09:10:21 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:10:21 | TRACE | o.p.typecheck.TypeCheckVisitor :             Visiting 	         [33mdeclaration[0m
+2024-04-09 09:10:21 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:10:21 | TRACE | o.p.typecheck.TypeCheckVisitor :             Visiting 	      [33massigment[0m
+2024-04-09 09:10:21 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:10:21 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:10:21 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	operation [33m+[0m
+2024-04-09 09:10:21 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	literal [33mString[0m
+2024-04-09 09:10:21 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	literal [33mString[0m
+2024-04-09 09:10:21 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:10:21 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:10:21 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	     [33midentifier[0m
+2024-04-09 09:10:21 | TRACE | o.p.typecheck.TypeCheckVisitor :             Visiting 	         [33mdeclaration[0m
+2024-04-09 09:10:21 | TRACE | o.p.typecheck.TypeCheckVisitor :             Visiting 	      [33massigment[0m
+2024-04-09 09:10:21 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	      [33massigment[0m
+2024-04-09 09:10:21 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	      [33massigment[0m
+2024-04-09 09:10:21 | TRACE | o.p.typecheck.TypeCheckVisitor :                         Visiting 	      [33massigment[0m
+2024-04-09 09:10:21 | TRACE | o.p.typecheck.TypeCheckVisitor :                             Visiting 	literal [33mInteger[0m
+2024-04-09 09:10:21 | ERROR | org.parser.Main : 
+					 [32m[ASSIGN ERROR][0m
+					 error at line 8:0 -> Cannot assign FLOAT to INT
+					  - statement: [33mx = 13.25;[0m
+					               [32m^[0m
+					 
+2024-04-09 09:10:21 | ERROR | org.parser.Main : 
+					 [32m[ASSIGN ERROR][0m
+					 error at line 15:6 -> Variable x already declared
+					  - statement: [33mfloat x;[0m
+					               [32m      ^[0m
+					 
+2024-04-09 09:10:21 | ERROR | org.parser.Main : 
+					 [32m[ASSIGN ERROR][0m
+					 error at line 18:0 -> Variable y not declared
+					  - statement: [33my = 10;[0m
+					               [32m^[0m
+					 
+2024-04-09 09:10:21 | ERROR | org.parser.Main : 
+					 [32m[ASSIGN ERROR][0m
+					 error at line 24:16 -> Variable z not declared
+					  - statement: [33mwrite "z=10: ", z;[0m
+					               [32m                ^[0m
+					 
+2024-04-09 09:10:21 | ERROR | org.parser.Main : 
+					 [36m[TYPE ERROR][0m
+					 error at line 4:22 -> Modulo can only be applied to integers
+					  - statement: [33mwrite "20 mod 3.0: ", 20 % 3.0;[0m
+					               [32m                      ^[0m
+					 
+2024-04-09 09:10:21 | ERROR | org.parser.Main : 
+					 [36m[TYPE ERROR][0m
+					 error at line 12:18 -> Concatenation can only be applied to strings
+					  - statement: [33mwrite "abc+10: ", "abc". 10;[0m
+					               [32m                  ^[0m
+					 
+2024-04-09 09:10:21 | ERROR | org.parser.Main : 
+					 [36m[TYPE ERROR][0m
+					 error at line 21:13 -> Arithmetic operations can only be applied to integers and floats
+					  - statement: [33mwrite "x+y", "x"+"y";[0m
+					               [32m             ^[0m
+					 
+2024-04-09 09:34:28 | INFO | org.parser.Main : Start parsing
+2024-04-09 09:34:28 | INFO | org.parser.Main : End parsing (prog (stat (writeStat write (expr "<Testing errors>")) ;) (stat (writeStat write (expr "4) mod used with float")) ;) (stat (writeStat write (expr "20 mod 3.0: ") , (expr (expr 20) % (expr 3.0))) ;) (stat (writeStat write (expr "8) assignment of float to int")) ;) (stat (declareStat (literals int) x) ;) (stat (expr x = (expr 13.25)) ;) (stat (writeStat write (expr "x=13.25: ") , (expr x)) ;) (stat (writeStat write (expr "12) . only for strings")) ;) (stat (writeStat write (expr "abc+10: ") , (expr (expr "abc") . (expr 10))) ;) (stat (writeStat write (expr "15) multiple declarations")) ;) (stat (declareStat (literals float) x) ;) (stat (writeStat write (expr "18) missing declaration")) ;) (stat (expr y = (expr 10)) ;) (stat (writeStat write (expr "21) + wont work with strings")) ;) (stat (writeStat write (expr "x+y") , (expr (expr "x") + (expr "y"))) ;) (stat (writeStat write (expr "24) missing declaration")) ;) (stat (writeStat write (expr "z=10: ") , (expr z)) ;) (stat (declareStat (literals float) a , b , c , d) ;) (stat (expr a = (expr b = (expr c = (expr d = (expr 1))))) ;) <EOF>)
+2024-04-09 09:34:28 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:34:28 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:34:28 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:34:28 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	operation [33mmodulo[0m
+2024-04-09 09:34:28 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	literal [33mInteger[0m
+2024-04-09 09:34:28 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	literal [33mFloat[0m
+2024-04-09 09:34:28 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:34:28 | TRACE | o.p.typecheck.TypeCheckVisitor :             Visiting 	         [33mdeclaration[0m
+2024-04-09 09:34:28 | TRACE | o.p.typecheck.TypeCheckVisitor :             Visiting 	      [33massigment[0m
+2024-04-09 09:34:28 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mFloat[0m
+2024-04-09 09:34:28 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:34:28 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	     [33midentifier[0m
+2024-04-09 09:34:28 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:34:28 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:34:28 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	operation [33mconcatenation[0m
+2024-04-09 09:34:28 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	literal [33mString[0m
+2024-04-09 09:34:28 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	literal [33mInteger[0m
+2024-04-09 09:34:28 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:34:28 | TRACE | o.p.typecheck.TypeCheckVisitor :             Visiting 	         [33mdeclaration[0m
+2024-04-09 09:34:28 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:34:28 | TRACE | o.p.typecheck.TypeCheckVisitor :             Visiting 	      [33massigment[0m
+2024-04-09 09:34:28 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:34:28 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:34:28 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	operation [33m+[0m
+2024-04-09 09:34:28 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	literal [33mString[0m
+2024-04-09 09:34:28 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	literal [33mString[0m
+2024-04-09 09:34:28 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:34:28 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:34:28 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	     [33midentifier[0m
+2024-04-09 09:34:28 | TRACE | o.p.typecheck.TypeCheckVisitor :             Visiting 	         [33mdeclaration[0m
+2024-04-09 09:34:28 | TRACE | o.p.typecheck.TypeCheckVisitor :             Visiting 	      [33massigment[0m
+2024-04-09 09:34:28 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	      [33massigment[0m
+2024-04-09 09:34:28 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	      [33massigment[0m
+2024-04-09 09:34:28 | TRACE | o.p.typecheck.TypeCheckVisitor :                         Visiting 	      [33massigment[0m
+2024-04-09 09:34:28 | TRACE | o.p.typecheck.TypeCheckVisitor :                             Visiting 	literal [33mInteger[0m
+2024-04-09 09:34:28 | ERROR | org.parser.Main : 
+					 [32m[ASSIGN ERROR][0m
+					 error at line 8:0 -> Cannot assign FLOAT to INT
+					  - statement: [33mx = 13.25;[0m
+					               [32m^[0m
+					 
+2024-04-09 09:34:28 | ERROR | org.parser.Main : 
+					 [32m[ASSIGN ERROR][0m
+					 error at line 15:6 -> Variable x already declared
+					  - statement: [33mfloat x;[0m
+					               [32m      ^[0m
+					 
+2024-04-09 09:34:28 | ERROR | org.parser.Main : 
+					 [32m[ASSIGN ERROR][0m
+					 error at line 18:0 -> Variable y not declared
+					  - statement: [33my = 10;[0m
+					               [32m^[0m
+					 
+2024-04-09 09:34:28 | ERROR | org.parser.Main : 
+					 [32m[ASSIGN ERROR][0m
+					 error at line 24:16 -> Variable z not declared
+					  - statement: [33mwrite "z=10: ", z;[0m
+					               [32m                ^[0m
+					 
+2024-04-09 09:34:28 | ERROR | org.parser.Main : 
+					 [36m[TYPE ERROR][0m
+					 error at line 4:22 -> Modulo can only be applied to integers
+					  - statement: [33mwrite "20 mod 3.0: ", 20 % 3.0;[0m
+					               [32m                      ^[0m
+					 
+2024-04-09 09:34:28 | ERROR | org.parser.Main : 
+					 [36m[TYPE ERROR][0m
+					 error at line 12:18 -> Concatenation can only be applied to strings
+					  - statement: [33mwrite "abc+10: ", "abc". 10;[0m
+					               [32m                  ^[0m
+					 
+2024-04-09 09:34:28 | ERROR | org.parser.Main : 
+					 [36m[TYPE ERROR][0m
+					 error at line 21:13 -> Arithmetic operations can only be applied to integers and floats
+					  - statement: [33mwrite "x+y", "x"+"y";[0m
+					               [32m             ^[0m
+					 
+2024-04-09 09:35:21 | INFO | org.parser.Main : Start parsing
+2024-04-09 09:35:21 | INFO | org.parser.Main : End parsing (prog (stat (writeStat write (expr "<Testing errors>")) ;) (stat (writeStat write (expr "4) mod used with float")) ;) (stat (writeStat write (expr "20 mod 3.0: ") , (expr (expr 20) % (expr 3.0))) ;) (stat (writeStat write (expr "8) assignment of float to int")) ;) (stat (declareStat (literals int) x) ;) (stat (expr x = (expr 13.25)) ;) (stat (writeStat write (expr "x=13.25: ") , (expr x)) ;) (stat (writeStat write (expr "12) . only for strings")) ;) (stat (writeStat write (expr "abc+10: ") , (expr (expr "abc") . (expr 10))) ;) (stat (writeStat write (expr "15) multiple declarations")) ;) (stat (declareStat (literals float) x) ;) (stat (writeStat write (expr "18) missing declaration")) ;) (stat (expr y = (expr 10)) ;) (stat (writeStat write (expr "21) + wont work with strings")) ;) (stat (writeStat write (expr "x+y") , (expr (expr "x") + (expr "y"))) ;) (stat (writeStat write (expr "24) missing declaration")) ;) (stat (writeStat write (expr "z=10: ") , (expr z)) ;) (stat (declareStat (literals float) a , b , c , d) ;) (stat (expr a = (expr b = (expr c = (expr d = (expr 1))))) ;) (stat (expr a = (expr (expr (expr 1) > (expr 2)) ? (expr 2) : (expr 1))) ;) <EOF>)
+2024-04-09 09:35:21 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:35:21 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:35:21 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:35:21 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	operation [33mmodulo[0m
+2024-04-09 09:35:21 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	literal [33mInteger[0m
+2024-04-09 09:35:21 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	literal [33mFloat[0m
+2024-04-09 09:35:21 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:35:21 | TRACE | o.p.typecheck.TypeCheckVisitor :             Visiting 	         [33mdeclaration[0m
+2024-04-09 09:35:21 | TRACE | o.p.typecheck.TypeCheckVisitor :             Visiting 	      [33massigment[0m
+2024-04-09 09:35:21 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mFloat[0m
+2024-04-09 09:35:21 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:35:21 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	     [33midentifier[0m
+2024-04-09 09:35:21 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:35:21 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:35:21 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	operation [33mconcatenation[0m
+2024-04-09 09:35:21 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	literal [33mString[0m
+2024-04-09 09:35:21 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	literal [33mInteger[0m
+2024-04-09 09:35:21 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:35:21 | TRACE | o.p.typecheck.TypeCheckVisitor :             Visiting 	         [33mdeclaration[0m
+2024-04-09 09:35:21 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:35:21 | TRACE | o.p.typecheck.TypeCheckVisitor :             Visiting 	      [33massigment[0m
+2024-04-09 09:35:21 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:35:21 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:35:21 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	operation [33m+[0m
+2024-04-09 09:35:21 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	literal [33mString[0m
+2024-04-09 09:35:21 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	literal [33mString[0m
+2024-04-09 09:35:21 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:35:21 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:35:21 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	     [33midentifier[0m
+2024-04-09 09:35:21 | TRACE | o.p.typecheck.TypeCheckVisitor :             Visiting 	         [33mdeclaration[0m
+2024-04-09 09:35:21 | TRACE | o.p.typecheck.TypeCheckVisitor :             Visiting 	      [33massigment[0m
+2024-04-09 09:35:21 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	      [33massigment[0m
+2024-04-09 09:35:21 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	      [33massigment[0m
+2024-04-09 09:35:21 | TRACE | o.p.typecheck.TypeCheckVisitor :                         Visiting 	      [33massigment[0m
+2024-04-09 09:35:21 | TRACE | o.p.typecheck.TypeCheckVisitor :                             Visiting 	literal [33mInteger[0m
+2024-04-09 09:35:21 | TRACE | o.p.typecheck.TypeCheckVisitor :             Visiting 	      [33massigment[0m
+2024-04-09 09:35:21 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	operation [33mternary[0m
+2024-04-09 09:35:21 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	operation [33m>[0m
+2024-04-09 09:35:21 | TRACE | o.p.typecheck.TypeCheckVisitor :                         Visiting 	literal [33mInteger[0m
+2024-04-09 09:35:21 | TRACE | o.p.typecheck.TypeCheckVisitor :                         Visiting 	literal [33mInteger[0m
+2024-04-09 09:35:21 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	literal [33mInteger[0m
+2024-04-09 09:35:21 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	literal [33mInteger[0m
+2024-04-09 09:35:21 | ERROR | org.parser.Main : 
+					 [32m[ASSIGN ERROR][0m
+					 error at line 8:0 -> Cannot assign FLOAT to INT
+					  - statement: [33mx = 13.25;[0m
+					               [32m^[0m
+					 
+2024-04-09 09:35:21 | ERROR | org.parser.Main : 
+					 [32m[ASSIGN ERROR][0m
+					 error at line 15:6 -> Variable x already declared
+					  - statement: [33mfloat x;[0m
+					               [32m      ^[0m
+					 
+2024-04-09 09:35:21 | ERROR | org.parser.Main : 
+					 [32m[ASSIGN ERROR][0m
+					 error at line 18:0 -> Variable y not declared
+					  - statement: [33my = 10;[0m
+					               [32m^[0m
+					 
+2024-04-09 09:35:21 | ERROR | org.parser.Main : 
+					 [32m[ASSIGN ERROR][0m
+					 error at line 24:16 -> Variable z not declared
+					  - statement: [33mwrite "z=10: ", z;[0m
+					               [32m                ^[0m
+					 
+2024-04-09 09:35:21 | ERROR | org.parser.Main : 
+					 [32m[ASSIGN ERROR][0m
+					 error at line 30:0 -> Cannot assign ERROR to FLOAT
+					  - statement: [33ma = 1>2 ? 2: 1;[0m
+					               [32m^[0m
+					 
+2024-04-09 09:35:21 | ERROR | org.parser.Main : 
+					 [36m[TYPE ERROR][0m
+					 error at line 4:22 -> Modulo can only be applied to integers
+					  - statement: [33mwrite "20 mod 3.0: ", 20 % 3.0;[0m
+					               [32m                      ^[0m
+					 
+2024-04-09 09:35:21 | ERROR | org.parser.Main : 
+					 [36m[TYPE ERROR][0m
+					 error at line 12:18 -> Concatenation can only be applied to strings
+					  - statement: [33mwrite "abc+10: ", "abc". 10;[0m
+					               [32m                  ^[0m
+					 
+2024-04-09 09:35:21 | ERROR | org.parser.Main : 
+					 [36m[TYPE ERROR][0m
+					 error at line 21:13 -> Arithmetic operations can only be applied to integers and floats
+					  - statement: [33mwrite "x+y", "x"+"y";[0m
+					               [32m             ^[0m
+					 
+2024-04-09 09:35:21 | ERROR | org.parser.Main : 
+					 [35m[CONDITION ERROR][0m
+					 error at line 30:4 -> Ternary condition must be a boolean
+					  - statement: [33ma = 1>2 ? 2: 1;[0m
+					               [32m    ^[0m
+					 
+2024-04-09 09:36:24 | INFO | org.parser.Main : Start parsing
+2024-04-09 09:36:24 | INFO | org.parser.Main : End parsing (prog (stat (writeStat write (expr "<Testing errors>")) ;) (stat (writeStat write (expr "4) mod used with float")) ;) (stat (writeStat write (expr "20 mod 3.0: ") , (expr (expr 20) % (expr 3.0))) ;) (stat (writeStat write (expr "8) assignment of float to int")) ;) (stat (declareStat (literals int) x) ;) (stat (expr x = (expr 13.25)) ;) (stat (writeStat write (expr "x=13.25: ") , (expr x)) ;) (stat (writeStat write (expr "12) . only for strings")) ;) (stat (writeStat write (expr "abc+10: ") , (expr (expr "abc") . (expr 10))) ;) (stat (writeStat write (expr "15) multiple declarations")) ;) (stat (declareStat (literals float) x) ;) (stat (writeStat write (expr "18) missing declaration")) ;) (stat (expr y = (expr 10)) ;) (stat (writeStat write (expr "21) + wont work with strings")) ;) (stat (writeStat write (expr "x+y") , (expr (expr "x") + (expr "y"))) ;) (stat (writeStat write (expr "24) missing declaration")) ;) (stat (writeStat write (expr "z=10: ") , (expr z)) ;) (stat (declareStat (literals float) a , b , c , d) ;) (stat (expr a = (expr b = (expr c = (expr d = (expr 1))))) ;) (stat (expr a = (expr (expr true) ? (expr 2) : (expr 1))) ;) <EOF>)
+2024-04-09 09:36:24 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:36:24 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:36:24 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:36:24 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	operation [33mmodulo[0m
+2024-04-09 09:36:24 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	literal [33mInteger[0m
+2024-04-09 09:36:24 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	literal [33mFloat[0m
+2024-04-09 09:36:24 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:36:24 | TRACE | o.p.typecheck.TypeCheckVisitor :             Visiting 	         [33mdeclaration[0m
+2024-04-09 09:36:24 | TRACE | o.p.typecheck.TypeCheckVisitor :             Visiting 	      [33massigment[0m
+2024-04-09 09:36:24 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mFloat[0m
+2024-04-09 09:36:24 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:36:24 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	     [33midentifier[0m
+2024-04-09 09:36:24 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:36:24 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:36:24 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	operation [33mconcatenation[0m
+2024-04-09 09:36:24 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	literal [33mString[0m
+2024-04-09 09:36:24 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	literal [33mInteger[0m
+2024-04-09 09:36:24 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:36:24 | TRACE | o.p.typecheck.TypeCheckVisitor :             Visiting 	         [33mdeclaration[0m
+2024-04-09 09:36:24 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:36:24 | TRACE | o.p.typecheck.TypeCheckVisitor :             Visiting 	      [33massigment[0m
+2024-04-09 09:36:24 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:36:24 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:36:24 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	operation [33m+[0m
+2024-04-09 09:36:24 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	literal [33mString[0m
+2024-04-09 09:36:24 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	literal [33mString[0m
+2024-04-09 09:36:24 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:36:24 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:36:24 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	     [33midentifier[0m
+2024-04-09 09:36:24 | TRACE | o.p.typecheck.TypeCheckVisitor :             Visiting 	         [33mdeclaration[0m
+2024-04-09 09:36:24 | TRACE | o.p.typecheck.TypeCheckVisitor :             Visiting 	      [33massigment[0m
+2024-04-09 09:36:24 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	      [33massigment[0m
+2024-04-09 09:36:24 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	      [33massigment[0m
+2024-04-09 09:36:24 | TRACE | o.p.typecheck.TypeCheckVisitor :                         Visiting 	      [33massigment[0m
+2024-04-09 09:36:24 | TRACE | o.p.typecheck.TypeCheckVisitor :                             Visiting 	literal [33mInteger[0m
+2024-04-09 09:36:24 | TRACE | o.p.typecheck.TypeCheckVisitor :             Visiting 	      [33massigment[0m
+2024-04-09 09:36:24 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	operation [33mternary[0m
+2024-04-09 09:36:24 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	literal [33mBoolean[0m
+2024-04-09 09:36:24 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	literal [33mInteger[0m
+2024-04-09 09:36:24 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	literal [33mInteger[0m
+2024-04-09 09:36:24 | ERROR | org.parser.Main : 
+					 [32m[ASSIGN ERROR][0m
+					 error at line 8:0 -> Cannot assign FLOAT to INT
+					  - statement: [33mx = 13.25;[0m
+					               [32m^[0m
+					 
+2024-04-09 09:36:24 | ERROR | org.parser.Main : 
+					 [32m[ASSIGN ERROR][0m
+					 error at line 15:6 -> Variable x already declared
+					  - statement: [33mfloat x;[0m
+					               [32m      ^[0m
+					 
+2024-04-09 09:36:24 | ERROR | org.parser.Main : 
+					 [32m[ASSIGN ERROR][0m
+					 error at line 18:0 -> Variable y not declared
+					  - statement: [33my = 10;[0m
+					               [32m^[0m
+					 
+2024-04-09 09:36:24 | ERROR | org.parser.Main : 
+					 [32m[ASSIGN ERROR][0m
+					 error at line 24:16 -> Variable z not declared
+					  - statement: [33mwrite "z=10: ", z;[0m
+					               [32m                ^[0m
+					 
+2024-04-09 09:36:24 | ERROR | org.parser.Main : 
+					 [36m[TYPE ERROR][0m
+					 error at line 4:22 -> Modulo can only be applied to integers
+					  - statement: [33mwrite "20 mod 3.0: ", 20 % 3.0;[0m
+					               [32m                      ^[0m
+					 
+2024-04-09 09:36:24 | ERROR | org.parser.Main : 
+					 [36m[TYPE ERROR][0m
+					 error at line 12:18 -> Concatenation can only be applied to strings
+					  - statement: [33mwrite "abc+10: ", "abc". 10;[0m
+					               [32m                  ^[0m
+					 
+2024-04-09 09:36:24 | ERROR | org.parser.Main : 
+					 [36m[TYPE ERROR][0m
+					 error at line 21:13 -> Arithmetic operations can only be applied to integers and floats
+					  - statement: [33mwrite "x+y", "x"+"y";[0m
+					               [32m             ^[0m
+					 
+2024-04-09 09:37:32 | INFO | org.parser.Main : Start parsing
+2024-04-09 09:37:32 | INFO | org.parser.Main : End parsing (prog (stat (writeStat write (expr "<Testing errors>")) ;) (stat (writeStat write (expr "4) mod used with float")) ;) (stat (writeStat write (expr "20 mod 3.0: ") , (expr (expr 20) % (expr 3.0))) ;) (stat (writeStat write (expr "8) assignment of float to int")) ;) (stat (declareStat (literals int) x) ;) (stat (expr x = (expr 13.25)) ;) (stat (writeStat write (expr "x=13.25: ") , (expr x)) ;) (stat (writeStat write (expr "12) . only for strings")) ;) (stat (writeStat write (expr "abc+10: ") , (expr (expr "abc") . (expr 10))) ;) (stat (writeStat write (expr "15) multiple declarations")) ;) (stat (declareStat (literals float) x) ;) (stat (writeStat write (expr "18) missing declaration")) ;) (stat (expr y = (expr 10)) ;) (stat (writeStat write (expr "21) + wont work with strings")) ;) (stat (writeStat write (expr "x+y") , (expr (expr "x") + (expr "y"))) ;) (stat (writeStat write (expr "24) missing declaration")) ;) (stat (writeStat write (expr "z=10: ") , (expr z)) ;) (stat (declareStat (literals float) a , b , c , d) ;) (stat (expr a = (expr b = (expr c = (expr d = (expr 1))))) ;) (stat (expr a = (expr (expr (expr 1) > (expr 2)) ? (expr 2) : (expr 1))) ;) <EOF>)
+2024-04-09 09:37:32 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:37:32 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:37:32 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:37:32 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	operation [33mmodulo[0m
+2024-04-09 09:37:32 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	literal [33mInteger[0m
+2024-04-09 09:37:32 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	literal [33mFloat[0m
+2024-04-09 09:37:32 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:37:32 | TRACE | o.p.typecheck.TypeCheckVisitor :             Visiting 	         [33mdeclaration[0m
+2024-04-09 09:37:32 | TRACE | o.p.typecheck.TypeCheckVisitor :             Visiting 	      [33massigment[0m
+2024-04-09 09:37:32 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mFloat[0m
+2024-04-09 09:37:32 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:37:32 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	     [33midentifier[0m
+2024-04-09 09:37:32 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:37:32 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:37:32 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	operation [33mconcatenation[0m
+2024-04-09 09:37:32 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	literal [33mString[0m
+2024-04-09 09:37:32 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	literal [33mInteger[0m
+2024-04-09 09:37:32 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:37:32 | TRACE | o.p.typecheck.TypeCheckVisitor :             Visiting 	         [33mdeclaration[0m
+2024-04-09 09:37:32 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:37:32 | TRACE | o.p.typecheck.TypeCheckVisitor :             Visiting 	      [33massigment[0m
+2024-04-09 09:37:32 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:37:32 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:37:32 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	operation [33m+[0m
+2024-04-09 09:37:32 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	literal [33mString[0m
+2024-04-09 09:37:32 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	literal [33mString[0m
+2024-04-09 09:37:32 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:37:32 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:37:32 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	     [33midentifier[0m
+2024-04-09 09:37:32 | TRACE | o.p.typecheck.TypeCheckVisitor :             Visiting 	         [33mdeclaration[0m
+2024-04-09 09:37:32 | TRACE | o.p.typecheck.TypeCheckVisitor :             Visiting 	      [33massigment[0m
+2024-04-09 09:37:32 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	      [33massigment[0m
+2024-04-09 09:37:32 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	      [33massigment[0m
+2024-04-09 09:37:32 | TRACE | o.p.typecheck.TypeCheckVisitor :                         Visiting 	      [33massigment[0m
+2024-04-09 09:37:32 | TRACE | o.p.typecheck.TypeCheckVisitor :                             Visiting 	literal [33mInteger[0m
+2024-04-09 09:37:32 | TRACE | o.p.typecheck.TypeCheckVisitor :             Visiting 	      [33massigment[0m
+2024-04-09 09:37:32 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	operation [33mternary[0m
+2024-04-09 09:37:32 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	operation [33m>[0m
+2024-04-09 09:37:32 | TRACE | o.p.typecheck.TypeCheckVisitor :                         Visiting 	literal [33mInteger[0m
+2024-04-09 09:37:32 | TRACE | o.p.typecheck.TypeCheckVisitor :                         Visiting 	literal [33mInteger[0m
+2024-04-09 09:37:32 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	literal [33mInteger[0m
+2024-04-09 09:37:32 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	literal [33mInteger[0m
+2024-04-09 09:37:32 | ERROR | org.parser.Main : 
+					 [32m[ASSIGN ERROR][0m
+					 error at line 8:0 -> Cannot assign FLOAT to INT
+					  - statement: [33mx = 13.25;[0m
+					               [32m^[0m
+					 
+2024-04-09 09:37:32 | ERROR | org.parser.Main : 
+					 [32m[ASSIGN ERROR][0m
+					 error at line 15:6 -> Variable x already declared
+					  - statement: [33mfloat x;[0m
+					               [32m      ^[0m
+					 
+2024-04-09 09:37:32 | ERROR | org.parser.Main : 
+					 [32m[ASSIGN ERROR][0m
+					 error at line 18:0 -> Variable y not declared
+					  - statement: [33my = 10;[0m
+					               [32m^[0m
+					 
+2024-04-09 09:37:32 | ERROR | org.parser.Main : 
+					 [32m[ASSIGN ERROR][0m
+					 error at line 24:16 -> Variable z not declared
+					  - statement: [33mwrite "z=10: ", z;[0m
+					               [32m                ^[0m
+					 
+2024-04-09 09:37:32 | ERROR | org.parser.Main : 
+					 [36m[TYPE ERROR][0m
+					 error at line 4:22 -> Modulo can only be applied to integers
+					  - statement: [33mwrite "20 mod 3.0: ", 20 % 3.0;[0m
+					               [32m                      ^[0m
+					 
+2024-04-09 09:37:32 | ERROR | org.parser.Main : 
+					 [36m[TYPE ERROR][0m
+					 error at line 12:18 -> Concatenation can only be applied to strings
+					  - statement: [33mwrite "abc+10: ", "abc". 10;[0m
+					               [32m                  ^[0m
+					 
+2024-04-09 09:37:32 | ERROR | org.parser.Main : 
+					 [36m[TYPE ERROR][0m
+					 error at line 21:13 -> Arithmetic operations can only be applied to integers and floats
+					  - statement: [33mwrite "x+y", "x"+"y";[0m
+					               [32m             ^[0m
+					 
+2024-04-09 09:37:41 | INFO | org.parser.Main : Start parsing
+2024-04-09 09:37:41 | INFO | org.parser.Main : End parsing (prog (stat (writeStat write (expr "<Testing errors>")) ;) (stat (writeStat write (expr "4) mod used with float")) ;) (stat (writeStat write (expr "20 mod 3.0: ") , (expr (expr 20) % (expr 3.0))) ;) (stat (writeStat write (expr "8) assignment of float to int")) ;) (stat (declareStat (literals int) x) ;) (stat (expr x = (expr 13.25)) ;) (stat (writeStat write (expr "x=13.25: ") , (expr x)) ;) (stat (writeStat write (expr "12) . only for strings")) ;) (stat (writeStat write (expr "abc+10: ") , (expr (expr "abc") . (expr 10))) ;) (stat (writeStat write (expr "15) multiple declarations")) ;) (stat (declareStat (literals float) x) ;) (stat (writeStat write (expr "18) missing declaration")) ;) (stat (expr y = (expr 10)) ;) (stat (writeStat write (expr "21) + wont work with strings")) ;) (stat (writeStat write (expr "x+y") , (expr (expr "x") + (expr "y"))) ;) (stat (writeStat write (expr "24) missing declaration")) ;) (stat (writeStat write (expr "z=10: ") , (expr z)) ;) (stat (declareStat (literals float) a , b , c , d) ;) (stat (expr a = (expr b = (expr c = (expr d = (expr 1))))) ;) (stat (expr a = (expr (expr "reee") ? (expr 2) : (expr 1))) ;) <EOF>)
+2024-04-09 09:37:41 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:37:41 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:37:41 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:37:41 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	operation [33mmodulo[0m
+2024-04-09 09:37:41 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	literal [33mInteger[0m
+2024-04-09 09:37:41 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	literal [33mFloat[0m
+2024-04-09 09:37:41 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:37:41 | TRACE | o.p.typecheck.TypeCheckVisitor :             Visiting 	         [33mdeclaration[0m
+2024-04-09 09:37:41 | TRACE | o.p.typecheck.TypeCheckVisitor :             Visiting 	      [33massigment[0m
+2024-04-09 09:37:41 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mFloat[0m
+2024-04-09 09:37:41 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:37:41 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	     [33midentifier[0m
+2024-04-09 09:37:41 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:37:41 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:37:41 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	operation [33mconcatenation[0m
+2024-04-09 09:37:41 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	literal [33mString[0m
+2024-04-09 09:37:41 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	literal [33mInteger[0m
+2024-04-09 09:37:41 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:37:41 | TRACE | o.p.typecheck.TypeCheckVisitor :             Visiting 	         [33mdeclaration[0m
+2024-04-09 09:37:41 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:37:41 | TRACE | o.p.typecheck.TypeCheckVisitor :             Visiting 	      [33massigment[0m
+2024-04-09 09:37:41 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:37:41 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:37:41 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	operation [33m+[0m
+2024-04-09 09:37:41 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	literal [33mString[0m
+2024-04-09 09:37:41 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	literal [33mString[0m
+2024-04-09 09:37:41 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:37:41 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:37:41 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	     [33midentifier[0m
+2024-04-09 09:37:41 | TRACE | o.p.typecheck.TypeCheckVisitor :             Visiting 	         [33mdeclaration[0m
+2024-04-09 09:37:41 | TRACE | o.p.typecheck.TypeCheckVisitor :             Visiting 	      [33massigment[0m
+2024-04-09 09:37:41 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	      [33massigment[0m
+2024-04-09 09:37:41 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	      [33massigment[0m
+2024-04-09 09:37:41 | TRACE | o.p.typecheck.TypeCheckVisitor :                         Visiting 	      [33massigment[0m
+2024-04-09 09:37:41 | TRACE | o.p.typecheck.TypeCheckVisitor :                             Visiting 	literal [33mInteger[0m
+2024-04-09 09:37:41 | TRACE | o.p.typecheck.TypeCheckVisitor :             Visiting 	      [33massigment[0m
+2024-04-09 09:37:41 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	operation [33mternary[0m
+2024-04-09 09:37:41 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	literal [33mString[0m
+2024-04-09 09:37:41 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	literal [33mInteger[0m
+2024-04-09 09:37:41 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	literal [33mInteger[0m
+2024-04-09 09:37:41 | ERROR | org.parser.Main : 
+					 [32m[ASSIGN ERROR][0m
+					 error at line 8:0 -> Cannot assign FLOAT to INT
+					  - statement: [33mx = 13.25;[0m
+					               [32m^[0m
+					 
+2024-04-09 09:37:41 | ERROR | org.parser.Main : 
+					 [32m[ASSIGN ERROR][0m
+					 error at line 15:6 -> Variable x already declared
+					  - statement: [33mfloat x;[0m
+					               [32m      ^[0m
+					 
+2024-04-09 09:37:41 | ERROR | org.parser.Main : 
+					 [32m[ASSIGN ERROR][0m
+					 error at line 18:0 -> Variable y not declared
+					  - statement: [33my = 10;[0m
+					               [32m^[0m
+					 
+2024-04-09 09:37:41 | ERROR | org.parser.Main : 
+					 [32m[ASSIGN ERROR][0m
+					 error at line 24:16 -> Variable z not declared
+					  - statement: [33mwrite "z=10: ", z;[0m
+					               [32m                ^[0m
+					 
+2024-04-09 09:37:41 | ERROR | org.parser.Main : 
+					 [32m[ASSIGN ERROR][0m
+					 error at line 30:0 -> Cannot assign ERROR to FLOAT
+					  - statement: [33ma = "reee" ? 2 : 1;[0m
+					               [32m^[0m
+					 
+2024-04-09 09:37:41 | ERROR | org.parser.Main : 
+					 [36m[TYPE ERROR][0m
+					 error at line 4:22 -> Modulo can only be applied to integers
+					  - statement: [33mwrite "20 mod 3.0: ", 20 % 3.0;[0m
+					               [32m                      ^[0m
+					 
+2024-04-09 09:37:41 | ERROR | org.parser.Main : 
+					 [36m[TYPE ERROR][0m
+					 error at line 12:18 -> Concatenation can only be applied to strings
+					  - statement: [33mwrite "abc+10: ", "abc". 10;[0m
+					               [32m                  ^[0m
+					 
+2024-04-09 09:37:41 | ERROR | org.parser.Main : 
+					 [36m[TYPE ERROR][0m
+					 error at line 21:13 -> Arithmetic operations can only be applied to integers and floats
+					  - statement: [33mwrite "x+y", "x"+"y";[0m
+					               [32m             ^[0m
+					 
+2024-04-09 09:37:41 | ERROR | org.parser.Main : 
+					 [35m[CONDITION ERROR][0m
+					 error at line 30:4 -> Ternary condition must be a boolean
+					  - statement: [33ma = "reee" ? 2 : 1;[0m
+					               [32m    ^[0m
+					 
+2024-04-09 09:39:10 | INFO | org.parser.Main : Start parsing
+2024-04-09 09:39:10 | INFO | org.parser.Main : End parsing (prog (stat (writeStat write (expr "<Testing errors>")) ;) (stat (writeStat write (expr "4) mod used with float")) ;) (stat (writeStat write (expr "20 mod 3.0: ") , (expr (expr 20) % (expr 3.0))) ;) (stat (writeStat write (expr "8) assignment of float to int")) ;) (stat (declareStat (literals int) x) ;) (stat (expr x = (expr 13.25)) ;) (stat (writeStat write (expr "x=13.25: ") , (expr x)) ;) (stat (writeStat write (expr "12) . only for strings")) ;) (stat (writeStat write (expr "abc+10: ") , (expr (expr "abc") . (expr 10))) ;) (stat (writeStat write (expr "15) multiple declarations")) ;) (stat (declareStat (literals float) x) ;) (stat (writeStat write (expr "18) missing declaration")) ;) (stat (expr y = (expr 10)) ;) (stat (writeStat write (expr "21) + wont work with strings")) ;) (stat (writeStat write (expr "x+y") , (expr (expr "x") + (expr "y"))) ;) (stat (writeStat write (expr "24) missing declaration")) ;) (stat (writeStat write (expr "z=10: ") , (expr z)) ;) (stat (declareStat (literals float) a , b , c , d) ;) (stat (expr a = (expr b = (expr c = (expr d = (expr 1))))) ;) (stat (declareStat (literals float) z) ;) (stat (expr z = (expr (expr "reee") ? (expr 2) : (expr 1))) ;) <EOF>)
+2024-04-09 09:39:10 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:39:10 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:39:10 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:39:10 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	operation [33mmodulo[0m
+2024-04-09 09:39:10 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	literal [33mInteger[0m
+2024-04-09 09:39:10 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	literal [33mFloat[0m
+2024-04-09 09:39:10 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:39:10 | TRACE | o.p.typecheck.TypeCheckVisitor :             Visiting 	         [33mdeclaration[0m
+2024-04-09 09:39:10 | TRACE | o.p.typecheck.TypeCheckVisitor :             Visiting 	      [33massigment[0m
+2024-04-09 09:39:10 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mFloat[0m
+2024-04-09 09:39:10 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:39:10 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	     [33midentifier[0m
+2024-04-09 09:39:10 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:39:10 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:39:10 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	operation [33mconcatenation[0m
+2024-04-09 09:39:10 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	literal [33mString[0m
+2024-04-09 09:39:10 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	literal [33mInteger[0m
+2024-04-09 09:39:10 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:39:10 | TRACE | o.p.typecheck.TypeCheckVisitor :             Visiting 	         [33mdeclaration[0m
+2024-04-09 09:39:10 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:39:10 | TRACE | o.p.typecheck.TypeCheckVisitor :             Visiting 	      [33massigment[0m
+2024-04-09 09:39:10 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:39:10 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:39:10 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	operation [33m+[0m
+2024-04-09 09:39:10 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	literal [33mString[0m
+2024-04-09 09:39:10 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	literal [33mString[0m
+2024-04-09 09:39:10 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:39:10 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:39:10 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	     [33midentifier[0m
+2024-04-09 09:39:10 | TRACE | o.p.typecheck.TypeCheckVisitor :             Visiting 	         [33mdeclaration[0m
+2024-04-09 09:39:10 | TRACE | o.p.typecheck.TypeCheckVisitor :             Visiting 	      [33massigment[0m
+2024-04-09 09:39:10 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	      [33massigment[0m
+2024-04-09 09:39:10 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	      [33massigment[0m
+2024-04-09 09:39:10 | TRACE | o.p.typecheck.TypeCheckVisitor :                         Visiting 	      [33massigment[0m
+2024-04-09 09:39:10 | TRACE | o.p.typecheck.TypeCheckVisitor :                             Visiting 	literal [33mInteger[0m
+2024-04-09 09:39:10 | TRACE | o.p.typecheck.TypeCheckVisitor :             Visiting 	         [33mdeclaration[0m
+2024-04-09 09:39:10 | TRACE | o.p.typecheck.TypeCheckVisitor :             Visiting 	      [33massigment[0m
+2024-04-09 09:39:10 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	operation [33mternary[0m
+2024-04-09 09:39:10 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	literal [33mString[0m
+2024-04-09 09:39:10 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	literal [33mInteger[0m
+2024-04-09 09:39:10 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	literal [33mInteger[0m
+2024-04-09 09:39:10 | ERROR | org.parser.Main : 
+					 [32m[ASSIGN ERROR][0m
+					 error at line 8:0 -> Cannot assign FLOAT to INT
+					  - statement: [33mx = 13.25;[0m
+					               [32m^[0m
+					 
+2024-04-09 09:39:10 | ERROR | org.parser.Main : 
+					 [32m[ASSIGN ERROR][0m
+					 error at line 15:6 -> Variable x already declared
+					  - statement: [33mfloat x;[0m
+					               [32m      ^[0m
+					 
+2024-04-09 09:39:10 | ERROR | org.parser.Main : 
+					 [32m[ASSIGN ERROR][0m
+					 error at line 18:0 -> Variable y not declared
+					  - statement: [33my = 10;[0m
+					               [32m^[0m
+					 
+2024-04-09 09:39:10 | ERROR | org.parser.Main : 
+					 [32m[ASSIGN ERROR][0m
+					 error at line 24:16 -> Variable z not declared
+					  - statement: [33mwrite "z=10: ", z;[0m
+					               [32m                ^[0m
+					 
+2024-04-09 09:39:10 | ERROR | org.parser.Main : 
+					 [32m[ASSIGN ERROR][0m
+					 error at line 32:0 -> Cannot assign ERROR to FLOAT
+					  - statement: [33mz = "reee" ? 2 : 1;[0m
+					               [32m^[0m
+					 
+2024-04-09 09:39:10 | ERROR | org.parser.Main : 
+					 [36m[TYPE ERROR][0m
+					 error at line 4:22 -> Modulo can only be applied to integers
+					  - statement: [33mwrite "20 mod 3.0: ", 20 % 3.0;[0m
+					               [32m                      ^[0m
+					 
+2024-04-09 09:39:10 | ERROR | org.parser.Main : 
+					 [36m[TYPE ERROR][0m
+					 error at line 12:18 -> Concatenation can only be applied to strings
+					  - statement: [33mwrite "abc+10: ", "abc". 10;[0m
+					               [32m                  ^[0m
+					 
+2024-04-09 09:39:10 | ERROR | org.parser.Main : 
+					 [36m[TYPE ERROR][0m
+					 error at line 21:13 -> Arithmetic operations can only be applied to integers and floats
+					  - statement: [33mwrite "x+y", "x"+"y";[0m
+					               [32m             ^[0m
+					 
+2024-04-09 09:39:10 | ERROR | org.parser.Main : 
+					 [35m[CONDITION ERROR][0m
+					 error at line 32:4 -> Ternary condition must be a boolean
+					  - statement: [33mz = "reee" ? 2 : 1;[0m
+					               [32m    ^[0m
+					 
+2024-04-09 09:39:25 | INFO | org.parser.Main : Start parsing
+2024-04-09 09:39:25 | INFO | org.parser.Main : End parsing (prog (stat (writeStat write (expr "<Testing errors>")) ;) (stat (writeStat write (expr "4) mod used with float")) ;) (stat (writeStat write (expr "20 mod 3.0: ") , (expr (expr 20) % (expr 3.0))) ;) (stat (writeStat write (expr "8) assignment of float to int")) ;) (stat (declareStat (literals int) x) ;) (stat (expr x = (expr 13.25)) ;) (stat (writeStat write (expr "x=13.25: ") , (expr x)) ;) (stat (writeStat write (expr "12) . only for strings")) ;) (stat (writeStat write (expr "abc+10: ") , (expr (expr "abc") . (expr 10))) ;) (stat (writeStat write (expr "15) multiple declarations")) ;) (stat (declareStat (literals float) x) ;) (stat (writeStat write (expr "18) missing declaration")) ;) (stat (expr y = (expr 10)) ;) (stat (writeStat write (expr "21) + wont work with strings")) ;) (stat (writeStat write (expr "x+y") , (expr (expr "x") + (expr "y"))) ;) (stat (writeStat write (expr "24) missing declaration")) ;) (stat (writeStat write (expr "z=10: ") , (expr z)) ;) (stat (declareStat (literals float) a , b , c , d) ;) (stat (expr a = (expr b = (expr c = (expr d = (expr 1))))) ;) (stat (declareStat (literals float) z) ;) (stat (expr z = (expr (expr true) ? (expr 2) : (expr 1))) ;) <EOF>)
+2024-04-09 09:39:25 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:39:25 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:39:25 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:39:25 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	operation [33mmodulo[0m
+2024-04-09 09:39:25 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	literal [33mInteger[0m
+2024-04-09 09:39:25 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	literal [33mFloat[0m
+2024-04-09 09:39:25 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:39:25 | TRACE | o.p.typecheck.TypeCheckVisitor :             Visiting 	         [33mdeclaration[0m
+2024-04-09 09:39:25 | TRACE | o.p.typecheck.TypeCheckVisitor :             Visiting 	      [33massigment[0m
+2024-04-09 09:39:25 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mFloat[0m
+2024-04-09 09:39:25 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:39:25 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	     [33midentifier[0m
+2024-04-09 09:39:25 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:39:25 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:39:25 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	operation [33mconcatenation[0m
+2024-04-09 09:39:25 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	literal [33mString[0m
+2024-04-09 09:39:25 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	literal [33mInteger[0m
+2024-04-09 09:39:25 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:39:25 | TRACE | o.p.typecheck.TypeCheckVisitor :             Visiting 	         [33mdeclaration[0m
+2024-04-09 09:39:25 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:39:25 | TRACE | o.p.typecheck.TypeCheckVisitor :             Visiting 	      [33massigment[0m
+2024-04-09 09:39:25 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:39:25 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:39:25 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	operation [33m+[0m
+2024-04-09 09:39:25 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	literal [33mString[0m
+2024-04-09 09:39:25 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	literal [33mString[0m
+2024-04-09 09:39:25 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:39:25 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:39:25 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	     [33midentifier[0m
+2024-04-09 09:39:25 | TRACE | o.p.typecheck.TypeCheckVisitor :             Visiting 	         [33mdeclaration[0m
+2024-04-09 09:39:25 | TRACE | o.p.typecheck.TypeCheckVisitor :             Visiting 	      [33massigment[0m
+2024-04-09 09:39:25 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	      [33massigment[0m
+2024-04-09 09:39:25 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	      [33massigment[0m
+2024-04-09 09:39:25 | TRACE | o.p.typecheck.TypeCheckVisitor :                         Visiting 	      [33massigment[0m
+2024-04-09 09:39:25 | TRACE | o.p.typecheck.TypeCheckVisitor :                             Visiting 	literal [33mInteger[0m
+2024-04-09 09:39:25 | TRACE | o.p.typecheck.TypeCheckVisitor :             Visiting 	         [33mdeclaration[0m
+2024-04-09 09:39:25 | TRACE | o.p.typecheck.TypeCheckVisitor :             Visiting 	      [33massigment[0m
+2024-04-09 09:39:25 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	operation [33mternary[0m
+2024-04-09 09:39:25 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	literal [33mBoolean[0m
+2024-04-09 09:39:25 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	literal [33mInteger[0m
+2024-04-09 09:39:25 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	literal [33mInteger[0m
+2024-04-09 09:39:25 | ERROR | org.parser.Main : 
+					 [32m[ASSIGN ERROR][0m
+					 error at line 8:0 -> Cannot assign FLOAT to INT
+					  - statement: [33mx = 13.25;[0m
+					               [32m^[0m
+					 
+2024-04-09 09:39:25 | ERROR | org.parser.Main : 
+					 [32m[ASSIGN ERROR][0m
+					 error at line 15:6 -> Variable x already declared
+					  - statement: [33mfloat x;[0m
+					               [32m      ^[0m
+					 
+2024-04-09 09:39:25 | ERROR | org.parser.Main : 
+					 [32m[ASSIGN ERROR][0m
+					 error at line 18:0 -> Variable y not declared
+					  - statement: [33my = 10;[0m
+					               [32m^[0m
+					 
+2024-04-09 09:39:25 | ERROR | org.parser.Main : 
+					 [32m[ASSIGN ERROR][0m
+					 error at line 24:16 -> Variable z not declared
+					  - statement: [33mwrite "z=10: ", z;[0m
+					               [32m                ^[0m
+					 
+2024-04-09 09:39:25 | ERROR | org.parser.Main : 
+					 [36m[TYPE ERROR][0m
+					 error at line 4:22 -> Modulo can only be applied to integers
+					  - statement: [33mwrite "20 mod 3.0: ", 20 % 3.0;[0m
+					               [32m                      ^[0m
+					 
+2024-04-09 09:39:25 | ERROR | org.parser.Main : 
+					 [36m[TYPE ERROR][0m
+					 error at line 12:18 -> Concatenation can only be applied to strings
+					  - statement: [33mwrite "abc+10: ", "abc". 10;[0m
+					               [32m                  ^[0m
+					 
+2024-04-09 09:39:25 | ERROR | org.parser.Main : 
+					 [36m[TYPE ERROR][0m
+					 error at line 21:13 -> Arithmetic operations can only be applied to integers and floats
+					  - statement: [33mwrite "x+y", "x"+"y";[0m
+					               [32m             ^[0m
+					 
+2024-04-09 09:41:26 | INFO | org.parser.Main : Start parsing
+2024-04-09 09:41:26 | INFO | org.parser.Main : End parsing (prog (stat (declareStat (literals float) a , b , c , d) ;) (stat (expr a = (expr b = (expr c = (expr d = (expr 1))))) ;) (stat (declareStat (literals float) z) ;) (stat (writeStat write (expr "<Constants>")) ;) (stat (writeStat write (expr "10: ") , (expr 10)) ;) (stat (writeStat write (expr " 1.25: ") , (expr 1.25)) ;) (stat (writeStat write (expr "")) ;) (stat ;) (stat (writeStat write (expr "<Variables>")) ;) (stat (declareStat (literals string) s) ;) (stat (expr s = (expr "Abcd")) ;) (stat (writeStat write (expr "s(Abcd): ") , (expr s)) ;) (stat (declareStat (literals float) d) ;) (stat (expr d = (expr 3.141592)) ;) (stat (writeStat write (expr "d(3.141592): ") , (expr d)) ;) (stat (declareStat (literals int) n) ;) (stat (expr n = (expr - (expr 500))) ;) (stat (writeStat write (expr "n(-500): ") , (expr n)) ;) (stat (writeStat write (expr "")) ;) (stat (declareStat (literals bool) boolean) ;) (stat (expr boolean = (expr true)) ;) (stat (writeStat write (expr "boolean(true): ") , (expr boolean)) ;) (stat (writeStat write (expr "")) ;) (stat (writeStat write (expr "<Expressions>")) ;) (stat (writeStat write (expr "2+3*5(17): ") , (expr (expr 2) + (expr (expr 3) * (expr 5)))) ;) (stat (writeStat write (expr "17 / 3(5): ") , (expr (expr 17) / (expr 3))) ;) (stat (writeStat write (expr "17 % 3(2): ") , (expr (expr 17) % (expr 3))) ;) (stat (writeStat write (expr "2.5*2.5/6.25(1.0): ") , (expr (expr (expr 2.5) * (expr 2.5)) / (expr 6.25))) ;) (stat (writeStat write (expr "1.5*3(4.5): ") , (expr (expr 1.5) * (expr 3))) ;) (stat (writeStat write (expr "abc+def (abcdef): ") , (expr (expr "abc") . (expr "def"))) ;) (stat (writeStat write (expr "")) ;) (stat (writeStat write (expr "<Comments>")) ;) (stat (writeStat write (expr "<Automatic int conversion>")) ;) (stat (declareStat (literals float) y) ;) (stat (expr y = (expr 10)) ;) (stat (writeStat write (expr "y (10.0): ") , (expr y)) ;) (stat (writeStat write (expr "<Multiple Assignments>")) ;) (stat (declareStat (literals int) i , j , k) ;) (stat (expr i = (expr j = (expr k = (expr 55)))) ;) (stat (writeStat write (expr "i=j=k=55: ") , (expr i) , (expr "=") , (expr j) , (expr "=") , (expr k)) ;) (stat (writeStat write (expr "<Input - a(int),b(float),c(string),d(bool)>")) ;) (stat (declareStat (literals int) a) ;) (stat (declareStat (literals float) b) ;) (stat (declareStat (literals string) c) ;) (stat (declareStat (literals bool) e) ;) (stat (expr a = (expr 0)) ;) (stat (expr b = (expr 0.0)) ;) (stat (expr c = (expr "")) ;) (stat (expr e = (expr true)) ;) (stat (readStat read a , b , c , e) ;) (stat (writeStat write (expr "a,b,c,e: ") , (expr a) , (expr ",") , (expr b) , (expr ",") , (expr c) , (expr ",") , (expr e)) ;) (stat (expr z = (expr (expr true) ? (expr 2) : (expr 1))) ;) <EOF>)
+2024-04-09 09:41:26 | TRACE | o.p.typecheck.TypeCheckVisitor :             Visiting 	         [33mdeclaration[0m
+2024-04-09 09:41:26 | TRACE | o.p.typecheck.TypeCheckVisitor :             Visiting 	      [33massigment[0m
+2024-04-09 09:41:26 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	      [33massigment[0m
+2024-04-09 09:41:26 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	      [33massigment[0m
+2024-04-09 09:41:26 | TRACE | o.p.typecheck.TypeCheckVisitor :                         Visiting 	      [33massigment[0m
+2024-04-09 09:41:26 | TRACE | o.p.typecheck.TypeCheckVisitor :                             Visiting 	literal [33mInteger[0m
+2024-04-09 09:41:26 | TRACE | o.p.typecheck.TypeCheckVisitor :             Visiting 	         [33mdeclaration[0m
+2024-04-09 09:41:26 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:41:26 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:41:26 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mInteger[0m
+2024-04-09 09:41:26 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:41:26 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mFloat[0m
+2024-04-09 09:41:26 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:41:26 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:41:26 | TRACE | o.p.typecheck.TypeCheckVisitor :             Visiting 	         [33mdeclaration[0m
+2024-04-09 09:41:26 | TRACE | o.p.typecheck.TypeCheckVisitor :             Visiting 	      [33massigment[0m
+2024-04-09 09:41:26 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:41:26 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:41:26 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	     [33midentifier[0m
+2024-04-09 09:41:26 | TRACE | o.p.typecheck.TypeCheckVisitor :             Visiting 	         [33mdeclaration[0m
+2024-04-09 09:41:26 | TRACE | o.p.typecheck.TypeCheckVisitor :             Visiting 	      [33massigment[0m
+2024-04-09 09:41:26 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mFloat[0m
+2024-04-09 09:41:26 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:41:26 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	     [33midentifier[0m
+2024-04-09 09:41:26 | TRACE | o.p.typecheck.TypeCheckVisitor :             Visiting 	         [33mdeclaration[0m
+2024-04-09 09:41:26 | TRACE | o.p.typecheck.TypeCheckVisitor :             Visiting 	      [33massigment[0m
+2024-04-09 09:41:26 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	arithmetic [33munary minus[0m
+2024-04-09 09:41:26 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	literal [33mInteger[0m
+2024-04-09 09:41:26 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:41:26 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	     [33midentifier[0m
+2024-04-09 09:41:26 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:41:26 | TRACE | o.p.typecheck.TypeCheckVisitor :             Visiting 	         [33mdeclaration[0m
+2024-04-09 09:41:26 | TRACE | o.p.typecheck.TypeCheckVisitor :             Visiting 	      [33massigment[0m
+2024-04-09 09:41:26 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mBoolean[0m
+2024-04-09 09:41:26 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:41:26 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	     [33midentifier[0m
+2024-04-09 09:41:26 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:41:26 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:41:26 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:41:26 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	operation [33m+[0m
+2024-04-09 09:41:26 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	literal [33mInteger[0m
+2024-04-09 09:41:26 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	operation [33m*[0m
+2024-04-09 09:41:26 | TRACE | o.p.typecheck.TypeCheckVisitor :                         Visiting 	literal [33mInteger[0m
+2024-04-09 09:41:26 | TRACE | o.p.typecheck.TypeCheckVisitor :                         Visiting 	literal [33mInteger[0m
+2024-04-09 09:41:26 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:41:26 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	operation [33m/[0m
+2024-04-09 09:41:26 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	literal [33mInteger[0m
+2024-04-09 09:41:26 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	literal [33mInteger[0m
+2024-04-09 09:41:26 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:41:26 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	operation [33mmodulo[0m
+2024-04-09 09:41:26 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	literal [33mInteger[0m
+2024-04-09 09:41:26 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	literal [33mInteger[0m
+2024-04-09 09:41:26 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:41:26 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	operation [33m/[0m
+2024-04-09 09:41:26 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	operation [33m*[0m
+2024-04-09 09:41:26 | TRACE | o.p.typecheck.TypeCheckVisitor :                         Visiting 	literal [33mFloat[0m
+2024-04-09 09:41:26 | TRACE | o.p.typecheck.TypeCheckVisitor :                         Visiting 	literal [33mFloat[0m
+2024-04-09 09:41:26 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	literal [33mFloat[0m
+2024-04-09 09:41:26 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:41:26 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	operation [33m*[0m
+2024-04-09 09:41:26 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	literal [33mFloat[0m
+2024-04-09 09:41:26 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	literal [33mInteger[0m
+2024-04-09 09:41:26 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:41:26 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	operation [33mconcatenation[0m
+2024-04-09 09:41:26 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	literal [33mString[0m
+2024-04-09 09:41:26 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	literal [33mString[0m
+2024-04-09 09:41:26 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:41:26 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:41:26 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:41:26 | TRACE | o.p.typecheck.TypeCheckVisitor :             Visiting 	         [33mdeclaration[0m
+2024-04-09 09:41:26 | TRACE | o.p.typecheck.TypeCheckVisitor :             Visiting 	      [33massigment[0m
+2024-04-09 09:41:26 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mInteger[0m
+2024-04-09 09:41:26 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:41:26 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	     [33midentifier[0m
+2024-04-09 09:41:26 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:41:26 | TRACE | o.p.typecheck.TypeCheckVisitor :             Visiting 	         [33mdeclaration[0m
+2024-04-09 09:41:26 | TRACE | o.p.typecheck.TypeCheckVisitor :             Visiting 	      [33massigment[0m
+2024-04-09 09:41:26 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	      [33massigment[0m
+2024-04-09 09:41:26 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	      [33massigment[0m
+2024-04-09 09:41:26 | TRACE | o.p.typecheck.TypeCheckVisitor :                         Visiting 	literal [33mInteger[0m
+2024-04-09 09:41:26 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:41:26 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	     [33midentifier[0m
+2024-04-09 09:41:26 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:41:26 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	     [33midentifier[0m
+2024-04-09 09:41:26 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:41:26 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	     [33midentifier[0m
+2024-04-09 09:41:26 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:41:26 | TRACE | o.p.typecheck.TypeCheckVisitor :             Visiting 	         [33mdeclaration[0m
+2024-04-09 09:41:26 | TRACE | o.p.typecheck.TypeCheckVisitor :             Visiting 	         [33mdeclaration[0m
+2024-04-09 09:41:26 | TRACE | o.p.typecheck.TypeCheckVisitor :             Visiting 	         [33mdeclaration[0m
+2024-04-09 09:41:26 | TRACE | o.p.typecheck.TypeCheckVisitor :             Visiting 	         [33mdeclaration[0m
+2024-04-09 09:41:26 | TRACE | o.p.typecheck.TypeCheckVisitor :             Visiting 	      [33massigment[0m
+2024-04-09 09:41:26 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mInteger[0m
+2024-04-09 09:41:26 | TRACE | o.p.typecheck.TypeCheckVisitor :             Visiting 	      [33massigment[0m
+2024-04-09 09:41:26 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mFloat[0m
+2024-04-09 09:41:26 | TRACE | o.p.typecheck.TypeCheckVisitor :             Visiting 	      [33massigment[0m
+2024-04-09 09:41:26 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:41:26 | TRACE | o.p.typecheck.TypeCheckVisitor :             Visiting 	      [33massigment[0m
+2024-04-09 09:41:26 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mBoolean[0m
+2024-04-09 09:41:26 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:41:26 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	     [33midentifier[0m
+2024-04-09 09:41:26 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:41:26 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	     [33midentifier[0m
+2024-04-09 09:41:26 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:41:26 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	     [33midentifier[0m
+2024-04-09 09:41:26 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:41:26 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	     [33midentifier[0m
+2024-04-09 09:41:26 | TRACE | o.p.typecheck.TypeCheckVisitor :             Visiting 	      [33massigment[0m
+2024-04-09 09:41:26 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	operation [33mternary[0m
+2024-04-09 09:41:26 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	literal [33mBoolean[0m
+2024-04-09 09:41:26 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	literal [33mInteger[0m
+2024-04-09 09:41:26 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	literal [33mInteger[0m
+2024-04-09 09:41:26 | ERROR | org.parser.Main : 
+					 [32m[ASSIGN ERROR][0m
+					 error at line 17:6 -> Variable d already declared
+					  - statement: [33mfloat d;[0m
+					               [32m      ^[0m
+					 
+2024-04-09 09:41:26 | ERROR | org.parser.Main : 
+					 [32m[ASSIGN ERROR][0m
+					 error at line 54:4 -> Variable a already declared
+					  - statement: [33mint a;[0m
+					               [32m    ^[0m
+					 
+2024-04-09 09:41:26 | ERROR | org.parser.Main : 
+					 [32m[ASSIGN ERROR][0m
+					 error at line 55:6 -> Variable b already declared
+					  - statement: [33mfloat b;[0m
+					               [32m      ^[0m
+					 
+2024-04-09 09:41:26 | ERROR | org.parser.Main : 
+					 [32m[ASSIGN ERROR][0m
+					 error at line 56:7 -> Variable c already declared
+					  - statement: [33mstring c;[0m
+					               [32m       ^[0m
+					 
+2024-04-09 09:41:26 | ERROR | org.parser.Main : 
+					 [32m[ASSIGN ERROR][0m
+					 error at line 60:0 -> Cannot assign STRING to FLOAT
+					  - statement: [33mc = "";[0m
+					               [32m^[0m
+					 
+2024-04-09 09:41:42 | INFO | org.parser.Main : Start parsing
+2024-04-09 09:41:42 | INFO | org.parser.Main : End parsing (prog (stat (writeStat write (expr "<Constants>")) ;) (stat (writeStat write (expr "10: ") , (expr 10)) ;) (stat (writeStat write (expr " 1.25: ") , (expr 1.25)) ;) (stat (writeStat write (expr "")) ;) (stat ;) (stat (writeStat write (expr "<Variables>")) ;) (stat (declareStat (literals string) s) ;) (stat (expr s = (expr "Abcd")) ;) (stat (writeStat write (expr "s(Abcd): ") , (expr s)) ;) (stat (declareStat (literals float) d) ;) (stat (expr d = (expr 3.141592)) ;) (stat (writeStat write (expr "d(3.141592): ") , (expr d)) ;) (stat (declareStat (literals int) n) ;) (stat (expr n = (expr - (expr 500))) ;) (stat (writeStat write (expr "n(-500): ") , (expr n)) ;) (stat (writeStat write (expr "")) ;) (stat (declareStat (literals bool) boolean) ;) (stat (expr boolean = (expr true)) ;) (stat (writeStat write (expr "boolean(true): ") , (expr boolean)) ;) (stat (writeStat write (expr "")) ;) (stat (writeStat write (expr "<Expressions>")) ;) (stat (writeStat write (expr "2+3*5(17): ") , (expr (expr 2) + (expr (expr 3) * (expr 5)))) ;) (stat (writeStat write (expr "17 / 3(5): ") , (expr (expr 17) / (expr 3))) ;) (stat (writeStat write (expr "17 % 3(2): ") , (expr (expr 17) % (expr 3))) ;) (stat (writeStat write (expr "2.5*2.5/6.25(1.0): ") , (expr (expr (expr 2.5) * (expr 2.5)) / (expr 6.25))) ;) (stat (writeStat write (expr "1.5*3(4.5): ") , (expr (expr 1.5) * (expr 3))) ;) (stat (writeStat write (expr "abc+def (abcdef): ") , (expr (expr "abc") . (expr "def"))) ;) (stat (writeStat write (expr "")) ;) (stat (writeStat write (expr "<Comments>")) ;) (stat (writeStat write (expr "<Automatic int conversion>")) ;) (stat (declareStat (literals float) y) ;) (stat (expr y = (expr 10)) ;) (stat (writeStat write (expr "y (10.0): ") , (expr y)) ;) (stat (writeStat write (expr "<Multiple Assignments>")) ;) (stat (declareStat (literals int) i , j , k) ;) (stat (expr i = (expr j = (expr k = (expr 55)))) ;) (stat (writeStat write (expr "i=j=k=55: ") , (expr i) , (expr "=") , (expr j) , (expr "=") , (expr k)) ;) (stat (writeStat write (expr "<Input - a(int),b(float),c(string),d(bool)>")) ;) (stat (declareStat (literals int) a) ;) (stat (declareStat (literals float) b) ;) (stat (declareStat (literals string) c) ;) (stat (declareStat (literals bool) e) ;) (stat (expr a = (expr 0)) ;) (stat (expr b = (expr 0.0)) ;) (stat (expr c = (expr "")) ;) (stat (expr e = (expr true)) ;) (stat (readStat read a , b , c , e) ;) (stat (writeStat write (expr "a,b,c,e: ") , (expr a) , (expr ",") , (expr b) , (expr ",") , (expr c) , (expr ",") , (expr e)) ;) (stat (expr z = (expr (expr true) ? (expr 2) : (expr 1))) ;) <EOF>)
+2024-04-09 09:41:42 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:41:42 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:41:42 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mInteger[0m
+2024-04-09 09:41:42 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:41:42 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mFloat[0m
+2024-04-09 09:41:42 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:41:42 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:41:42 | TRACE | o.p.typecheck.TypeCheckVisitor :             Visiting 	         [33mdeclaration[0m
+2024-04-09 09:41:42 | TRACE | o.p.typecheck.TypeCheckVisitor :             Visiting 	      [33massigment[0m
+2024-04-09 09:41:42 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:41:42 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:41:42 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	     [33midentifier[0m
+2024-04-09 09:41:42 | TRACE | o.p.typecheck.TypeCheckVisitor :             Visiting 	         [33mdeclaration[0m
+2024-04-09 09:41:42 | TRACE | o.p.typecheck.TypeCheckVisitor :             Visiting 	      [33massigment[0m
+2024-04-09 09:41:42 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mFloat[0m
+2024-04-09 09:41:42 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:41:42 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	     [33midentifier[0m
+2024-04-09 09:41:42 | TRACE | o.p.typecheck.TypeCheckVisitor :             Visiting 	         [33mdeclaration[0m
+2024-04-09 09:41:42 | TRACE | o.p.typecheck.TypeCheckVisitor :             Visiting 	      [33massigment[0m
+2024-04-09 09:41:42 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	arithmetic [33munary minus[0m
+2024-04-09 09:41:42 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	literal [33mInteger[0m
+2024-04-09 09:41:42 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:41:42 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	     [33midentifier[0m
+2024-04-09 09:41:42 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:41:42 | TRACE | o.p.typecheck.TypeCheckVisitor :             Visiting 	         [33mdeclaration[0m
+2024-04-09 09:41:42 | TRACE | o.p.typecheck.TypeCheckVisitor :             Visiting 	      [33massigment[0m
+2024-04-09 09:41:42 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mBoolean[0m
+2024-04-09 09:41:42 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:41:42 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	     [33midentifier[0m
+2024-04-09 09:41:42 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:41:42 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:41:42 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:41:42 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	operation [33m+[0m
+2024-04-09 09:41:42 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	literal [33mInteger[0m
+2024-04-09 09:41:42 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	operation [33m*[0m
+2024-04-09 09:41:42 | TRACE | o.p.typecheck.TypeCheckVisitor :                         Visiting 	literal [33mInteger[0m
+2024-04-09 09:41:42 | TRACE | o.p.typecheck.TypeCheckVisitor :                         Visiting 	literal [33mInteger[0m
+2024-04-09 09:41:42 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:41:42 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	operation [33m/[0m
+2024-04-09 09:41:42 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	literal [33mInteger[0m
+2024-04-09 09:41:42 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	literal [33mInteger[0m
+2024-04-09 09:41:42 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:41:42 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	operation [33mmodulo[0m
+2024-04-09 09:41:42 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	literal [33mInteger[0m
+2024-04-09 09:41:42 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	literal [33mInteger[0m
+2024-04-09 09:41:42 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:41:42 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	operation [33m/[0m
+2024-04-09 09:41:42 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	operation [33m*[0m
+2024-04-09 09:41:42 | TRACE | o.p.typecheck.TypeCheckVisitor :                         Visiting 	literal [33mFloat[0m
+2024-04-09 09:41:42 | TRACE | o.p.typecheck.TypeCheckVisitor :                         Visiting 	literal [33mFloat[0m
+2024-04-09 09:41:42 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	literal [33mFloat[0m
+2024-04-09 09:41:42 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:41:42 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	operation [33m*[0m
+2024-04-09 09:41:42 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	literal [33mFloat[0m
+2024-04-09 09:41:42 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	literal [33mInteger[0m
+2024-04-09 09:41:42 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:41:42 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	operation [33mconcatenation[0m
+2024-04-09 09:41:42 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	literal [33mString[0m
+2024-04-09 09:41:42 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	literal [33mString[0m
+2024-04-09 09:41:42 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:41:42 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:41:42 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:41:42 | TRACE | o.p.typecheck.TypeCheckVisitor :             Visiting 	         [33mdeclaration[0m
+2024-04-09 09:41:42 | TRACE | o.p.typecheck.TypeCheckVisitor :             Visiting 	      [33massigment[0m
+2024-04-09 09:41:42 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mInteger[0m
+2024-04-09 09:41:42 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:41:42 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	     [33midentifier[0m
+2024-04-09 09:41:42 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:41:42 | TRACE | o.p.typecheck.TypeCheckVisitor :             Visiting 	         [33mdeclaration[0m
+2024-04-09 09:41:42 | TRACE | o.p.typecheck.TypeCheckVisitor :             Visiting 	      [33massigment[0m
+2024-04-09 09:41:42 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	      [33massigment[0m
+2024-04-09 09:41:42 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	      [33massigment[0m
+2024-04-09 09:41:42 | TRACE | o.p.typecheck.TypeCheckVisitor :                         Visiting 	literal [33mInteger[0m
+2024-04-09 09:41:42 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:41:42 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	     [33midentifier[0m
+2024-04-09 09:41:42 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:41:42 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	     [33midentifier[0m
+2024-04-09 09:41:42 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:41:42 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	     [33midentifier[0m
+2024-04-09 09:41:42 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:41:42 | TRACE | o.p.typecheck.TypeCheckVisitor :             Visiting 	         [33mdeclaration[0m
+2024-04-09 09:41:42 | TRACE | o.p.typecheck.TypeCheckVisitor :             Visiting 	         [33mdeclaration[0m
+2024-04-09 09:41:42 | TRACE | o.p.typecheck.TypeCheckVisitor :             Visiting 	         [33mdeclaration[0m
+2024-04-09 09:41:42 | TRACE | o.p.typecheck.TypeCheckVisitor :             Visiting 	         [33mdeclaration[0m
+2024-04-09 09:41:42 | TRACE | o.p.typecheck.TypeCheckVisitor :             Visiting 	      [33massigment[0m
+2024-04-09 09:41:42 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mInteger[0m
+2024-04-09 09:41:42 | TRACE | o.p.typecheck.TypeCheckVisitor :             Visiting 	      [33massigment[0m
+2024-04-09 09:41:42 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mFloat[0m
+2024-04-09 09:41:42 | TRACE | o.p.typecheck.TypeCheckVisitor :             Visiting 	      [33massigment[0m
+2024-04-09 09:41:42 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:41:42 | TRACE | o.p.typecheck.TypeCheckVisitor :             Visiting 	      [33massigment[0m
+2024-04-09 09:41:42 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mBoolean[0m
+2024-04-09 09:41:42 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:41:42 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	     [33midentifier[0m
+2024-04-09 09:41:42 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:41:42 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	     [33midentifier[0m
+2024-04-09 09:41:42 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:41:42 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	     [33midentifier[0m
+2024-04-09 09:41:42 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:41:42 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	     [33midentifier[0m
+2024-04-09 09:41:42 | TRACE | o.p.typecheck.TypeCheckVisitor :             Visiting 	      [33massigment[0m
+2024-04-09 09:41:42 | ERROR | org.parser.Main : 
+					 [32m[ASSIGN ERROR][0m
+					 error at line 59:0 -> Variable z not declared
+					  - statement: [33mz = true ? 2 : 1;[0m
+					               [32m^[0m
+					 
+2024-04-09 09:41:55 | INFO | org.parser.Main : Start parsing
+2024-04-09 09:41:55 | INFO | org.parser.Main : End parsing (prog (stat (declareStat (literals float) z) ;) (stat (writeStat write (expr "<Constants>")) ;) (stat (writeStat write (expr "10: ") , (expr 10)) ;) (stat (writeStat write (expr " 1.25: ") , (expr 1.25)) ;) (stat (writeStat write (expr "")) ;) (stat ;) (stat (writeStat write (expr "<Variables>")) ;) (stat (declareStat (literals string) s) ;) (stat (expr s = (expr "Abcd")) ;) (stat (writeStat write (expr "s(Abcd): ") , (expr s)) ;) (stat (declareStat (literals float) d) ;) (stat (expr d = (expr 3.141592)) ;) (stat (writeStat write (expr "d(3.141592): ") , (expr d)) ;) (stat (declareStat (literals int) n) ;) (stat (expr n = (expr - (expr 500))) ;) (stat (writeStat write (expr "n(-500): ") , (expr n)) ;) (stat (writeStat write (expr "")) ;) (stat (declareStat (literals bool) boolean) ;) (stat (expr boolean = (expr true)) ;) (stat (writeStat write (expr "boolean(true): ") , (expr boolean)) ;) (stat (writeStat write (expr "")) ;) (stat (writeStat write (expr "<Expressions>")) ;) (stat (writeStat write (expr "2+3*5(17): ") , (expr (expr 2) + (expr (expr 3) * (expr 5)))) ;) (stat (writeStat write (expr "17 / 3(5): ") , (expr (expr 17) / (expr 3))) ;) (stat (writeStat write (expr "17 % 3(2): ") , (expr (expr 17) % (expr 3))) ;) (stat (writeStat write (expr "2.5*2.5/6.25(1.0): ") , (expr (expr (expr 2.5) * (expr 2.5)) / (expr 6.25))) ;) (stat (writeStat write (expr "1.5*3(4.5): ") , (expr (expr 1.5) * (expr 3))) ;) (stat (writeStat write (expr "abc+def (abcdef): ") , (expr (expr "abc") . (expr "def"))) ;) (stat (writeStat write (expr "")) ;) (stat (writeStat write (expr "<Comments>")) ;) (stat (writeStat write (expr "<Automatic int conversion>")) ;) (stat (declareStat (literals float) y) ;) (stat (expr y = (expr 10)) ;) (stat (writeStat write (expr "y (10.0): ") , (expr y)) ;) (stat (writeStat write (expr "<Multiple Assignments>")) ;) (stat (declareStat (literals int) i , j , k) ;) (stat (expr i = (expr j = (expr k = (expr 55)))) ;) (stat (writeStat write (expr "i=j=k=55: ") , (expr i) , (expr "=") , (expr j) , (expr "=") , (expr k)) ;) (stat (writeStat write (expr "<Input - a(int),b(float),c(string),d(bool)>")) ;) (stat (declareStat (literals int) a) ;) (stat (declareStat (literals float) b) ;) (stat (declareStat (literals string) c) ;) (stat (declareStat (literals bool) e) ;) (stat (expr a = (expr 0)) ;) (stat (expr b = (expr 0.0)) ;) (stat (expr c = (expr "")) ;) (stat (expr e = (expr true)) ;) (stat (readStat read a , b , c , e) ;) (stat (writeStat write (expr "a,b,c,e: ") , (expr a) , (expr ",") , (expr b) , (expr ",") , (expr c) , (expr ",") , (expr e)) ;) (stat (expr z = (expr (expr true) ? (expr 2) : (expr 1))) ;) <EOF>)
+2024-04-09 09:41:55 | TRACE | o.p.typecheck.TypeCheckVisitor :             Visiting 	         [33mdeclaration[0m
+2024-04-09 09:41:55 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:41:55 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:41:55 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mInteger[0m
+2024-04-09 09:41:55 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:41:55 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mFloat[0m
+2024-04-09 09:41:55 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:41:55 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:41:55 | TRACE | o.p.typecheck.TypeCheckVisitor :             Visiting 	         [33mdeclaration[0m
+2024-04-09 09:41:55 | TRACE | o.p.typecheck.TypeCheckVisitor :             Visiting 	      [33massigment[0m
+2024-04-09 09:41:55 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:41:55 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:41:55 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	     [33midentifier[0m
+2024-04-09 09:41:55 | TRACE | o.p.typecheck.TypeCheckVisitor :             Visiting 	         [33mdeclaration[0m
+2024-04-09 09:41:55 | TRACE | o.p.typecheck.TypeCheckVisitor :             Visiting 	      [33massigment[0m
+2024-04-09 09:41:55 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mFloat[0m
+2024-04-09 09:41:55 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:41:55 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	     [33midentifier[0m
+2024-04-09 09:41:55 | TRACE | o.p.typecheck.TypeCheckVisitor :             Visiting 	         [33mdeclaration[0m
+2024-04-09 09:41:55 | TRACE | o.p.typecheck.TypeCheckVisitor :             Visiting 	      [33massigment[0m
+2024-04-09 09:41:55 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	arithmetic [33munary minus[0m
+2024-04-09 09:41:55 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	literal [33mInteger[0m
+2024-04-09 09:41:55 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:41:55 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	     [33midentifier[0m
+2024-04-09 09:41:55 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:41:55 | TRACE | o.p.typecheck.TypeCheckVisitor :             Visiting 	         [33mdeclaration[0m
+2024-04-09 09:41:55 | TRACE | o.p.typecheck.TypeCheckVisitor :             Visiting 	      [33massigment[0m
+2024-04-09 09:41:55 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mBoolean[0m
+2024-04-09 09:41:55 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:41:55 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	     [33midentifier[0m
+2024-04-09 09:41:55 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:41:55 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:41:55 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:41:55 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	operation [33m+[0m
+2024-04-09 09:41:55 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	literal [33mInteger[0m
+2024-04-09 09:41:55 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	operation [33m*[0m
+2024-04-09 09:41:55 | TRACE | o.p.typecheck.TypeCheckVisitor :                         Visiting 	literal [33mInteger[0m
+2024-04-09 09:41:55 | TRACE | o.p.typecheck.TypeCheckVisitor :                         Visiting 	literal [33mInteger[0m
+2024-04-09 09:41:55 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:41:55 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	operation [33m/[0m
+2024-04-09 09:41:55 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	literal [33mInteger[0m
+2024-04-09 09:41:55 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	literal [33mInteger[0m
+2024-04-09 09:41:55 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:41:55 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	operation [33mmodulo[0m
+2024-04-09 09:41:55 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	literal [33mInteger[0m
+2024-04-09 09:41:55 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	literal [33mInteger[0m
+2024-04-09 09:41:55 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:41:55 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	operation [33m/[0m
+2024-04-09 09:41:55 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	operation [33m*[0m
+2024-04-09 09:41:55 | TRACE | o.p.typecheck.TypeCheckVisitor :                         Visiting 	literal [33mFloat[0m
+2024-04-09 09:41:55 | TRACE | o.p.typecheck.TypeCheckVisitor :                         Visiting 	literal [33mFloat[0m
+2024-04-09 09:41:55 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	literal [33mFloat[0m
+2024-04-09 09:41:55 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:41:55 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	operation [33m*[0m
+2024-04-09 09:41:55 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	literal [33mFloat[0m
+2024-04-09 09:41:55 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	literal [33mInteger[0m
+2024-04-09 09:41:55 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:41:55 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	operation [33mconcatenation[0m
+2024-04-09 09:41:55 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	literal [33mString[0m
+2024-04-09 09:41:55 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	literal [33mString[0m
+2024-04-09 09:41:55 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:41:55 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:41:55 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:41:55 | TRACE | o.p.typecheck.TypeCheckVisitor :             Visiting 	         [33mdeclaration[0m
+2024-04-09 09:41:55 | TRACE | o.p.typecheck.TypeCheckVisitor :             Visiting 	      [33massigment[0m
+2024-04-09 09:41:55 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mInteger[0m
+2024-04-09 09:41:55 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:41:55 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	     [33midentifier[0m
+2024-04-09 09:41:55 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:41:55 | TRACE | o.p.typecheck.TypeCheckVisitor :             Visiting 	         [33mdeclaration[0m
+2024-04-09 09:41:55 | TRACE | o.p.typecheck.TypeCheckVisitor :             Visiting 	      [33massigment[0m
+2024-04-09 09:41:55 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	      [33massigment[0m
+2024-04-09 09:41:55 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	      [33massigment[0m
+2024-04-09 09:41:55 | TRACE | o.p.typecheck.TypeCheckVisitor :                         Visiting 	literal [33mInteger[0m
+2024-04-09 09:41:55 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:41:55 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	     [33midentifier[0m
+2024-04-09 09:41:55 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:41:55 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	     [33midentifier[0m
+2024-04-09 09:41:55 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:41:55 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	     [33midentifier[0m
+2024-04-09 09:41:55 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:41:55 | TRACE | o.p.typecheck.TypeCheckVisitor :             Visiting 	         [33mdeclaration[0m
+2024-04-09 09:41:55 | TRACE | o.p.typecheck.TypeCheckVisitor :             Visiting 	         [33mdeclaration[0m
+2024-04-09 09:41:55 | TRACE | o.p.typecheck.TypeCheckVisitor :             Visiting 	         [33mdeclaration[0m
+2024-04-09 09:41:55 | TRACE | o.p.typecheck.TypeCheckVisitor :             Visiting 	         [33mdeclaration[0m
+2024-04-09 09:41:55 | TRACE | o.p.typecheck.TypeCheckVisitor :             Visiting 	      [33massigment[0m
+2024-04-09 09:41:55 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mInteger[0m
+2024-04-09 09:41:55 | TRACE | o.p.typecheck.TypeCheckVisitor :             Visiting 	      [33massigment[0m
+2024-04-09 09:41:55 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mFloat[0m
+2024-04-09 09:41:55 | TRACE | o.p.typecheck.TypeCheckVisitor :             Visiting 	      [33massigment[0m
+2024-04-09 09:41:55 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:41:55 | TRACE | o.p.typecheck.TypeCheckVisitor :             Visiting 	      [33massigment[0m
+2024-04-09 09:41:55 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mBoolean[0m
+2024-04-09 09:41:55 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:41:55 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	     [33midentifier[0m
+2024-04-09 09:41:55 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:41:55 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	     [33midentifier[0m
+2024-04-09 09:41:55 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:41:55 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	     [33midentifier[0m
+2024-04-09 09:41:55 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:41:55 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	     [33midentifier[0m
+2024-04-09 09:41:55 | TRACE | o.p.typecheck.TypeCheckVisitor :             Visiting 	      [33massigment[0m
+2024-04-09 09:41:55 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	operation [33mternary[0m
+2024-04-09 09:41:55 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	literal [33mBoolean[0m
+2024-04-09 09:41:55 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	literal [33mInteger[0m
+2024-04-09 09:41:55 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	literal [33mInteger[0m
+2024-04-09 09:53:32 | INFO | org.parser.Main : Start parsing
+2024-04-09 09:53:32 | INFO | org.parser.Main : End parsing (prog (stat (writeStat write (expr "<Relational operators>")) ;) (stat (writeStat write (expr "1<5: ") , (expr (expr 1) < (expr 5))) ;) (stat (writeStat write (expr "1>3.5: ") , (expr (expr 1) > (expr 3.5))) ;) (stat (writeStat write (expr "aa==aa: ") , (expr (expr "aa") == (expr "aa"))) ;) (stat (writeStat write (expr "aa==ab: ") , (expr (expr "aa") == (expr "ab"))) ;) (stat (writeStat write (expr "aa!=ab: ") , (expr (expr "aa") != (expr "ab"))) ;) (stat (writeStat write (expr "")) ;) (stat (writeStat write (expr "<Logic operators>")) ;) (stat (writeStat write (expr "false and true (false):") , (expr (expr false) && (expr true))) ;) (stat (writeStat write (expr "false or true (true):") , (expr (expr false) || (expr true))) ;) (stat (writeStat write (expr "not 1==2 (true):") , (expr ! (expr ( (expr (expr 1) == (expr 2)) )))) ;) (stat (writeStat write (expr "true or false and true (true):") , (expr (expr true) || (expr (expr false) && (expr true)))) ;) <EOF>)
+2024-04-09 09:53:32 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:53:32 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:53:32 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	operation [33m<[0m
+2024-04-09 09:53:32 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	literal [33mInteger[0m
+2024-04-09 09:53:32 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	literal [33mInteger[0m
+2024-04-09 09:53:32 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:53:32 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	operation [33m>[0m
+2024-04-09 09:53:32 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	literal [33mInteger[0m
+2024-04-09 09:53:32 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	literal [33mFloat[0m
+2024-04-09 09:53:32 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:53:32 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	operation [33m==[0m
+2024-04-09 09:53:32 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	literal [33mString[0m
+2024-04-09 09:53:32 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	literal [33mString[0m
+2024-04-09 09:53:32 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:53:32 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	operation [33m==[0m
+2024-04-09 09:53:32 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	literal [33mString[0m
+2024-04-09 09:53:32 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	literal [33mString[0m
+2024-04-09 09:53:32 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:53:32 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	operation [33m!=[0m
+2024-04-09 09:53:32 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	literal [33mString[0m
+2024-04-09 09:53:32 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	literal [33mString[0m
+2024-04-09 09:53:32 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:53:32 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:53:32 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:53:32 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	logical [33mand[0m
+2024-04-09 09:53:32 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	literal [33mBoolean[0m
+2024-04-09 09:53:32 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	literal [33mBoolean[0m
+2024-04-09 09:53:32 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:53:32 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	logical [33mor[0m
+2024-04-09 09:53:32 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	literal [33mBoolean[0m
+2024-04-09 09:53:32 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	literal [33mBoolean[0m
+2024-04-09 09:53:32 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:53:32 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	logic [33mnegation[0m
+2024-04-09 09:53:32 | TRACE | o.p.typecheck.TypeCheckVisitor :                         Visiting 	operation [33m==[0m
+2024-04-09 09:53:32 | TRACE | o.p.typecheck.TypeCheckVisitor :                             Visiting 	literal [33mInteger[0m
+2024-04-09 09:53:32 | TRACE | o.p.typecheck.TypeCheckVisitor :                             Visiting 	literal [33mInteger[0m
+2024-04-09 09:53:32 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:53:32 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	logical [33mor[0m
+2024-04-09 09:53:32 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	literal [33mBoolean[0m
+2024-04-09 09:53:32 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	logical [33mand[0m
+2024-04-09 09:53:32 | TRACE | o.p.typecheck.TypeCheckVisitor :                         Visiting 	literal [33mBoolean[0m
+2024-04-09 09:53:32 | TRACE | o.p.typecheck.TypeCheckVisitor :                         Visiting 	literal [33mBoolean[0m
+2024-04-09 09:53:32 | ERROR | org.parser.Main : 
+					 [36m[TYPE ERROR][0m
+					 error at line 11:26 -> Negation can only be applied to booleans
+					  - statement: [33mwrite "not 1==2 (true):", !(1==2);[0m
+					               [32m                          ^[0m
+					 
+2024-04-09 09:59:27 | INFO | org.parser.Main : Start parsing
+2024-04-09 09:59:27 | INFO | org.parser.Main : End parsing (prog (stat (writeStat write (expr "<Relational operators>")) ;) (stat (writeStat write (expr "1<5: ") , (expr (expr 1) < (expr 5))) ;) (stat (writeStat write (expr "1>3.5: ") , (expr (expr 1) > (expr 3.5))) ;) (stat (writeStat write (expr "aa==aa: ") , (expr (expr "aa") == (expr "aa"))) ;) (stat (writeStat write (expr "aa==ab: ") , (expr (expr "aa") == (expr "ab"))) ;) (stat (writeStat write (expr "aa!=ab: ") , (expr (expr "aa") != (expr "ab"))) ;) (stat (writeStat write (expr "")) ;) (stat (writeStat write (expr "<Logic operators>")) ;) (stat (writeStat write (expr "false and true (false):") , (expr (expr false) && (expr true))) ;) (stat (writeStat write (expr "false or true (true):") , (expr (expr false) || (expr true))) ;) (stat (writeStat write (expr "not 1==2 (true):") , (expr ! (expr ( (expr (expr 1) == (expr 2)) )))) ;) (stat (writeStat write (expr "true or false and true (true):") , (expr (expr true) || (expr (expr false) && (expr true)))) ;) <EOF>)
+2024-04-09 09:59:27 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:59:27 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:59:27 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	operation [33m<[0m
+2024-04-09 09:59:27 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	literal [33mInteger[0m
+2024-04-09 09:59:27 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	literal [33mInteger[0m
+2024-04-09 09:59:27 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:59:27 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	operation [33m>[0m
+2024-04-09 09:59:27 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	literal [33mInteger[0m
+2024-04-09 09:59:27 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	literal [33mFloat[0m
+2024-04-09 09:59:27 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:59:27 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	operation [33m==[0m
+2024-04-09 09:59:27 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	literal [33mString[0m
+2024-04-09 09:59:27 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	literal [33mString[0m
+2024-04-09 09:59:27 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:59:27 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	operation [33m==[0m
+2024-04-09 09:59:27 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	literal [33mString[0m
+2024-04-09 09:59:27 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	literal [33mString[0m
+2024-04-09 09:59:27 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:59:27 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	operation [33m!=[0m
+2024-04-09 09:59:27 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	literal [33mString[0m
+2024-04-09 09:59:27 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	literal [33mString[0m
+2024-04-09 09:59:27 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:59:27 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:59:27 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:59:27 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	logical [33mand[0m
+2024-04-09 09:59:27 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	literal [33mBoolean[0m
+2024-04-09 09:59:27 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	literal [33mBoolean[0m
+2024-04-09 09:59:27 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:59:27 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	logical [33mor[0m
+2024-04-09 09:59:27 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	literal [33mBoolean[0m
+2024-04-09 09:59:27 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	literal [33mBoolean[0m
+2024-04-09 09:59:27 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:59:27 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	logic [33mnegation[0m
+2024-04-09 09:59:27 | TRACE | o.p.typecheck.TypeCheckVisitor :                         Visiting 	operation [33m==[0m
+2024-04-09 09:59:27 | TRACE | o.p.typecheck.TypeCheckVisitor :                             Visiting 	literal [33mInteger[0m
+2024-04-09 09:59:27 | TRACE | o.p.typecheck.TypeCheckVisitor :                             Visiting 	literal [33mInteger[0m
+2024-04-09 09:59:27 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 09:59:27 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	logical [33mor[0m
+2024-04-09 09:59:27 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	literal [33mBoolean[0m
+2024-04-09 09:59:27 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	logical [33mand[0m
+2024-04-09 09:59:27 | TRACE | o.p.typecheck.TypeCheckVisitor :                         Visiting 	literal [33mBoolean[0m
+2024-04-09 09:59:27 | TRACE | o.p.typecheck.TypeCheckVisitor :                         Visiting 	literal [33mBoolean[0m
+2024-04-09 09:59:27 | ERROR | org.parser.Main : 
+					 [36m[TYPE ERROR][0m
+					 error at line 4:18 -> Comparison operations can only be applied to integers and floats
+					  - statement: [33mwrite "aa==aa: ", "aa"=="aa";[0m
+					               [32m                  ^[0m
+					 
+2024-04-09 09:59:27 | ERROR | org.parser.Main : 
+					 [36m[TYPE ERROR][0m
+					 error at line 5:18 -> Comparison operations can only be applied to integers and floats
+					  - statement: [33mwrite "aa==ab: ", "aa"=="ab";[0m
+					               [32m                  ^[0m
+					 
+2024-04-09 09:59:27 | ERROR | org.parser.Main : 
+					 [36m[TYPE ERROR][0m
+					 error at line 6:18 -> Comparison operations can only be applied to integers and floats
+					  - statement: [33mwrite "aa!=ab: ", "aa"!="ab";[0m
+					               [32m                  ^[0m
+					 
+2024-04-09 09:59:27 | ERROR | org.parser.Main : 
+					 [36m[TYPE ERROR][0m
+					 error at line 11:26 -> Negation can only be applied to booleans
+					  - statement: [33mwrite "not 1==2 (true):", !(1==2);[0m
+					               [32m                          ^[0m
+					 
+2024-04-09 10:05:14 | INFO | org.parser.Main : Start parsing
+2024-04-09 10:05:14 | INFO | org.parser.Main : End parsing (prog (stat (writeStat write (expr "<Relational operators>")) ;) (stat (writeStat write (expr "1<5: ") , (expr (expr 1) < (expr 5))) ;) (stat (writeStat write (expr "1>3.5: ") , (expr (expr 1) > (expr 3.5))) ;) (stat (writeStat write (expr "aa==aa: ") , (expr (expr "aa") == (expr "aa"))) ;) (stat (writeStat write (expr "aa==ab: ") , (expr (expr "aa") == (expr "ab"))) ;) (stat (writeStat write (expr "aa!=ab: ") , (expr (expr "aa") != (expr "ab"))) ;) (stat (writeStat write (expr "")) ;) (stat (writeStat write (expr "<Logic operators>")) ;) (stat (writeStat write (expr "false and true (false):") , (expr (expr false) && (expr true))) ;) (stat (writeStat write (expr "false or true (true):") , (expr (expr false) || (expr true))) ;) (stat (writeStat write (expr "not 1==2 (true):") , (expr ! (expr ( (expr (expr 1) == (expr 2)) )))) ;) (stat (writeStat write (expr "true or false and true (true):") , (expr (expr true) || (expr (expr false) && (expr true)))) ;) <EOF>)
+2024-04-09 10:05:14 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 10:05:14 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 10:05:14 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	operation [33m<[0m
+2024-04-09 10:05:14 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	literal [33mInteger[0m
+2024-04-09 10:05:14 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	literal [33mInteger[0m
+2024-04-09 10:05:14 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 10:05:14 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	operation [33m>[0m
+2024-04-09 10:05:14 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	literal [33mInteger[0m
+2024-04-09 10:05:14 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	literal [33mFloat[0m
+2024-04-09 10:05:14 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 10:05:14 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	operation [33m==[0m
+2024-04-09 10:05:14 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	literal [33mString[0m
+2024-04-09 10:05:14 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	literal [33mString[0m
+2024-04-09 10:05:14 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 10:05:14 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	operation [33m==[0m
+2024-04-09 10:05:14 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	literal [33mString[0m
+2024-04-09 10:05:14 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	literal [33mString[0m
+2024-04-09 10:05:14 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 10:05:14 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	operation [33m!=[0m
+2024-04-09 10:05:14 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	literal [33mString[0m
+2024-04-09 10:05:14 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	literal [33mString[0m
+2024-04-09 10:05:14 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 10:05:14 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 10:05:14 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 10:05:14 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	logical [33mand[0m
+2024-04-09 10:05:14 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	literal [33mBoolean[0m
+2024-04-09 10:05:14 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	literal [33mBoolean[0m
+2024-04-09 10:05:14 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 10:05:14 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	logical [33mor[0m
+2024-04-09 10:05:14 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	literal [33mBoolean[0m
+2024-04-09 10:05:14 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	literal [33mBoolean[0m
+2024-04-09 10:05:14 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 10:05:14 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	logic [33mnegation[0m
+2024-04-09 10:05:14 | TRACE | o.p.typecheck.TypeCheckVisitor :                         Visiting 	operation [33m==[0m
+2024-04-09 10:05:14 | TRACE | o.p.typecheck.TypeCheckVisitor :                             Visiting 	literal [33mInteger[0m
+2024-04-09 10:05:14 | TRACE | o.p.typecheck.TypeCheckVisitor :                             Visiting 	literal [33mInteger[0m
+2024-04-09 10:05:14 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 10:05:14 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	logical [33mor[0m
+2024-04-09 10:05:14 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	literal [33mBoolean[0m
+2024-04-09 10:05:14 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	logical [33mand[0m
+2024-04-09 10:05:14 | TRACE | o.p.typecheck.TypeCheckVisitor :                         Visiting 	literal [33mBoolean[0m
+2024-04-09 10:05:14 | TRACE | o.p.typecheck.TypeCheckVisitor :                         Visiting 	literal [33mBoolean[0m
+2024-04-09 10:05:14 | ERROR | org.parser.Main : 
+					 [36m[TYPE ERROR][0m
+					 error at line 11:26 -> Negation can only be applied to booleans
+					  - statement: [33mwrite "not 1==2 (true):", !(1==2);[0m
+					               [32m                          ^[0m
+					 
+2024-04-09 10:17:56 | INFO | org.parser.Main : Start parsing
+2024-04-09 10:17:56 | INFO | org.parser.Main : End parsing (prog (stat (writeStat write (expr "<Relational operators>")) ;) (stat (writeStat write (expr "1<5: ") , (expr (expr 1) < (expr 5))) ;) (stat (writeStat write (expr "1>3.5: ") , (expr (expr 1) > (expr 3.5))) ;) (stat (writeStat write (expr "aa==aa: ") , (expr (expr "aa") == (expr "aa"))) ;) (stat (writeStat write (expr "aa==ab: ") , (expr (expr "aa") == (expr "ab"))) ;) (stat (writeStat write (expr "aa!=ab: ") , (expr (expr "aa") != (expr "ab"))) ;) (stat (writeStat write (expr "")) ;) (stat (writeStat write (expr "<Logic operators>")) ;) (stat (writeStat write (expr "false and true (false):") , (expr (expr false) && (expr true))) ;) (stat (writeStat write (expr "false or true (true):") , (expr (expr false) || (expr true))) ;) (stat (writeStat write (expr "not 1==2 (true):") , (expr ! (expr ( (expr (expr 1) == (expr 2)) )))) ;) (stat (writeStat write (expr "true or false and true (true):") , (expr (expr true) || (expr (expr false) && (expr true)))) ;) <EOF>)
+2024-04-09 10:17:56 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 10:17:56 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 10:17:56 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	operation [33m<[0m
+2024-04-09 10:17:56 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	literal [33mInteger[0m
+2024-04-09 10:17:56 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	literal [33mInteger[0m
+2024-04-09 10:17:56 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 10:17:56 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	operation [33m>[0m
+2024-04-09 10:17:56 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	literal [33mInteger[0m
+2024-04-09 10:17:56 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	literal [33mFloat[0m
+2024-04-09 10:17:56 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 10:17:56 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	operation [33m==[0m
+2024-04-09 10:17:56 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	literal [33mString[0m
+2024-04-09 10:17:56 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	literal [33mString[0m
+2024-04-09 10:17:56 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 10:17:56 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	operation [33m==[0m
+2024-04-09 10:17:56 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	literal [33mString[0m
+2024-04-09 10:17:56 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	literal [33mString[0m
+2024-04-09 10:17:56 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 10:17:56 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	operation [33m!=[0m
+2024-04-09 10:17:56 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	literal [33mString[0m
+2024-04-09 10:17:56 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	literal [33mString[0m
+2024-04-09 10:17:56 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 10:17:56 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 10:17:56 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 10:17:56 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	logical [33mand[0m
+2024-04-09 10:17:56 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	literal [33mBoolean[0m
+2024-04-09 10:17:56 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	literal [33mBoolean[0m
+2024-04-09 10:17:56 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 10:17:56 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	logical [33mor[0m
+2024-04-09 10:17:56 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	literal [33mBoolean[0m
+2024-04-09 10:17:56 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	literal [33mBoolean[0m
+2024-04-09 10:17:56 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 10:17:56 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	logic [33mnegation[0m
+2024-04-09 10:17:56 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	         [33mparenthesis[0m
+2024-04-09 10:17:56 | TRACE | o.p.typecheck.TypeCheckVisitor :                         Visiting 	operation [33m==[0m
+2024-04-09 10:17:56 | TRACE | o.p.typecheck.TypeCheckVisitor :                             Visiting 	literal [33mInteger[0m
+2024-04-09 10:17:56 | TRACE | o.p.typecheck.TypeCheckVisitor :                             Visiting 	literal [33mInteger[0m
+2024-04-09 10:17:56 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	literal [33mString[0m
+2024-04-09 10:17:56 | TRACE | o.p.typecheck.TypeCheckVisitor :                 Visiting 	logical [33mor[0m
+2024-04-09 10:17:56 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	literal [33mBoolean[0m
+2024-04-09 10:17:56 | TRACE | o.p.typecheck.TypeCheckVisitor :                     Visiting 	logical [33mand[0m
+2024-04-09 10:17:56 | TRACE | o.p.typecheck.TypeCheckVisitor :                         Visiting 	literal [33mBoolean[0m
+2024-04-09 10:17:56 | TRACE | o.p.typecheck.TypeCheckVisitor :                         Visiting 	literal [33mBoolean[0m

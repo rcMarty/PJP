@@ -56,9 +56,9 @@ public class TypeErrorLogger {
 
         return """
                 error at line %d:%d -> %s
-                 - statement: %s
-                              %s
-                """.formatted(lineNum, charPos, message, line, " ".repeat(charPos) + "^");
+                 - statement: %s%s%s
+                              %s%s%s
+                """.formatted(lineNum, charPos, message, AnsiiColors.ANSI_YELLOW ,line,AnsiiColors.ANSI_RESET,AnsiiColors.ANSI_GREEN, " ".repeat(charPos) + "^",AnsiiColors.ANSI_RESET);
     }
 
     public List<String> getErrors() {

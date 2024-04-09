@@ -1,4 +1,4 @@
-// Generated from /home/rc_marty/OneDrive/Dokumenty/_Škola/6_Semestr/PJP/ProjectAntlr/src/main/antlr4/grammars/ProjExpr.g4 by ANTLR 4.13.1
+// Generated from /home/rc_marty/6_Semestr/PJP/ProjectAntlr/src/main/antlr4/grammars/ProjExpr.g4 by ANTLR 4.13.1
 package org.antlr4.projexpr;
 
 import org.antlr.v4.runtime.ParserRuleContext;
@@ -221,18 +221,6 @@ public class ProjExprBaseListener implements ProjExprListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterCondition(ProjExprParser.ConditionContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitCondition(ProjExprParser.ConditionContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
 	@Override public void enterNegation(ProjExprParser.NegationContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -413,6 +401,18 @@ public class ProjExprBaseListener implements ProjExprListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterTernary(ProjExprParser.TernaryContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitTernary(ProjExprParser.TernaryContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterAssign(ProjExprParser.AssignContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -420,6 +420,18 @@ public class ProjExprBaseListener implements ProjExprListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitAssign(ProjExprParser.AssignContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterCondition(ProjExprParser.ConditionContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitCondition(ProjExprParser.ConditionContext ctx) { }
 
 	/**
 	 * {@inheritDoc}
