@@ -1,24 +1,17 @@
 grammar ProjExpr;
 
-prog: (stat )+ EOF;
-
-stat: '{' stat* '}'     # block
-    | writeStat ';'     # write
-    | declareStat ';'   # declare
-    | expr ';'          # expression
-    | readStat ';'      # read
-    | ifStat            # if
-    | whileStat         # while
-    | forStat           # for
-    | ';'               # empty
-    ;
+prog: (statement )+ EOF;
 
 writeStat: 'write' expr? (',' expr)* ;
 readStat: 'read' ID (',' ID)* ;
 
-ifStat: 'if' '(' condition ')' stat ('else' stat)? ;
-whileStat: 'while' '(' condition ')' stat ;
-forStat: 'for' '(' expr ';' condition ';' expr ')' stat ;
+ifStat: 'if' '(' condition ')' statement ('else' statement)? ;
+whileStat: 'while' '(' condition ')' statement ;
+forStat: 'for' '(' expr ';' condition ';' expr ')' statement ;
+
+blockStat: '{' statement* '}' ;
+
+exprStat: expr ;
 
 declareStat: literals ID (',' ID)* ;
 literals: 'int'
@@ -27,8 +20,17 @@ literals: 'int'
         | 'bool'
         ;
 
-
-
+statement
+    : blockStat
+    | writeStat ';'
+    | declareStat ';'
+    | exprStat ';'
+    | readStat ';'
+    | ifStat
+    | whileStat
+    | forStat
+    | ';'
+    ;
 
 expr: '-' expr                          # unaryMinus
     | '!' expr                          # negation

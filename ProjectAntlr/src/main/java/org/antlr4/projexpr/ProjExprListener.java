@@ -1,4 +1,4 @@
-// Generated from /home/rc_marty/6_Semestr/PJP/ProjectAntlr/src/main/antlr4/grammars/ProjExpr.g4 by ANTLR 4.13.1
+// Generated from /home/rc_marty/OneDrive/Dokumenty/_Škola/6_Semestr/PJP/ProjectAntlr/src/main/antlr4/grammars/ProjExpr.g4 by ANTLR 4.13.1
 package org.antlr4.projexpr;
 import org.antlr.v4.runtime.tree.ParseTreeListener;
 
@@ -17,114 +17,6 @@ public interface ProjExprListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitProg(ProjExprParser.ProgContext ctx);
-	/**
-	 * Enter a parse tree produced by the {@code block}
-	 * labeled alternative in {@link ProjExprParser#stat}.
-	 * @param ctx the parse tree
-	 */
-	void enterBlock(ProjExprParser.BlockContext ctx);
-	/**
-	 * Exit a parse tree produced by the {@code block}
-	 * labeled alternative in {@link ProjExprParser#stat}.
-	 * @param ctx the parse tree
-	 */
-	void exitBlock(ProjExprParser.BlockContext ctx);
-	/**
-	 * Enter a parse tree produced by the {@code write}
-	 * labeled alternative in {@link ProjExprParser#stat}.
-	 * @param ctx the parse tree
-	 */
-	void enterWrite(ProjExprParser.WriteContext ctx);
-	/**
-	 * Exit a parse tree produced by the {@code write}
-	 * labeled alternative in {@link ProjExprParser#stat}.
-	 * @param ctx the parse tree
-	 */
-	void exitWrite(ProjExprParser.WriteContext ctx);
-	/**
-	 * Enter a parse tree produced by the {@code declare}
-	 * labeled alternative in {@link ProjExprParser#stat}.
-	 * @param ctx the parse tree
-	 */
-	void enterDeclare(ProjExprParser.DeclareContext ctx);
-	/**
-	 * Exit a parse tree produced by the {@code declare}
-	 * labeled alternative in {@link ProjExprParser#stat}.
-	 * @param ctx the parse tree
-	 */
-	void exitDeclare(ProjExprParser.DeclareContext ctx);
-	/**
-	 * Enter a parse tree produced by the {@code expression}
-	 * labeled alternative in {@link ProjExprParser#stat}.
-	 * @param ctx the parse tree
-	 */
-	void enterExpression(ProjExprParser.ExpressionContext ctx);
-	/**
-	 * Exit a parse tree produced by the {@code expression}
-	 * labeled alternative in {@link ProjExprParser#stat}.
-	 * @param ctx the parse tree
-	 */
-	void exitExpression(ProjExprParser.ExpressionContext ctx);
-	/**
-	 * Enter a parse tree produced by the {@code read}
-	 * labeled alternative in {@link ProjExprParser#stat}.
-	 * @param ctx the parse tree
-	 */
-	void enterRead(ProjExprParser.ReadContext ctx);
-	/**
-	 * Exit a parse tree produced by the {@code read}
-	 * labeled alternative in {@link ProjExprParser#stat}.
-	 * @param ctx the parse tree
-	 */
-	void exitRead(ProjExprParser.ReadContext ctx);
-	/**
-	 * Enter a parse tree produced by the {@code if}
-	 * labeled alternative in {@link ProjExprParser#stat}.
-	 * @param ctx the parse tree
-	 */
-	void enterIf(ProjExprParser.IfContext ctx);
-	/**
-	 * Exit a parse tree produced by the {@code if}
-	 * labeled alternative in {@link ProjExprParser#stat}.
-	 * @param ctx the parse tree
-	 */
-	void exitIf(ProjExprParser.IfContext ctx);
-	/**
-	 * Enter a parse tree produced by the {@code while}
-	 * labeled alternative in {@link ProjExprParser#stat}.
-	 * @param ctx the parse tree
-	 */
-	void enterWhile(ProjExprParser.WhileContext ctx);
-	/**
-	 * Exit a parse tree produced by the {@code while}
-	 * labeled alternative in {@link ProjExprParser#stat}.
-	 * @param ctx the parse tree
-	 */
-	void exitWhile(ProjExprParser.WhileContext ctx);
-	/**
-	 * Enter a parse tree produced by the {@code for}
-	 * labeled alternative in {@link ProjExprParser#stat}.
-	 * @param ctx the parse tree
-	 */
-	void enterFor(ProjExprParser.ForContext ctx);
-	/**
-	 * Exit a parse tree produced by the {@code for}
-	 * labeled alternative in {@link ProjExprParser#stat}.
-	 * @param ctx the parse tree
-	 */
-	void exitFor(ProjExprParser.ForContext ctx);
-	/**
-	 * Enter a parse tree produced by the {@code empty}
-	 * labeled alternative in {@link ProjExprParser#stat}.
-	 * @param ctx the parse tree
-	 */
-	void enterEmpty(ProjExprParser.EmptyContext ctx);
-	/**
-	 * Exit a parse tree produced by the {@code empty}
-	 * labeled alternative in {@link ProjExprParser#stat}.
-	 * @param ctx the parse tree
-	 */
-	void exitEmpty(ProjExprParser.EmptyContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link ProjExprParser#writeStat}.
 	 * @param ctx the parse tree
@@ -176,6 +68,26 @@ public interface ProjExprListener extends ParseTreeListener {
 	 */
 	void exitForStat(ProjExprParser.ForStatContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link ProjExprParser#blockStat}.
+	 * @param ctx the parse tree
+	 */
+	void enterBlockStat(ProjExprParser.BlockStatContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link ProjExprParser#blockStat}.
+	 * @param ctx the parse tree
+	 */
+	void exitBlockStat(ProjExprParser.BlockStatContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link ProjExprParser#exprStat}.
+	 * @param ctx the parse tree
+	 */
+	void enterExprStat(ProjExprParser.ExprStatContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link ProjExprParser#exprStat}.
+	 * @param ctx the parse tree
+	 */
+	void exitExprStat(ProjExprParser.ExprStatContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link ProjExprParser#declareStat}.
 	 * @param ctx the parse tree
 	 */
@@ -195,6 +107,16 @@ public interface ProjExprListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitLiterals(ProjExprParser.LiteralsContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link ProjExprParser#statement}.
+	 * @param ctx the parse tree
+	 */
+	void enterStatement(ProjExprParser.StatementContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link ProjExprParser#statement}.
+	 * @param ctx the parse tree
+	 */
+	void exitStatement(ProjExprParser.StatementContext ctx);
 	/**
 	 * Enter a parse tree produced by the {@code negation}
 	 * labeled alternative in {@link ProjExprParser#expr}.

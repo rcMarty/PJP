@@ -10,7 +10,8 @@ public enum Types {
     INT(0),
     FLOAT(0.0),
     BOOL(false),
-    ERROR(null);
+    ERROR(null),
+    VOID(null);
 
     private final Object defaultValue;
 

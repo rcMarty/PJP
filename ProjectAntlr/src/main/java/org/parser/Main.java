@@ -6,6 +6,7 @@ import org.antlr.v4.runtime.CharStreams;
 import org.antlr.v4.runtime.CommonTokenStream;
 import org.antlr4.projexpr.ProjExprLexer;
 import org.antlr4.projexpr.ProjExprParser;
+import org.parser.compiler.CompilerVisitor;
 import org.parser.errors.AntlrErrorListener;
 import org.parser.typecheck.TypeCheckVisitor;
 
@@ -61,6 +62,17 @@ public class Main {
         TypeCheckVisitor typecheck = new TypeCheckVisitor();
         typecheck.visit(tree);
         typecheck.getErrorLogger().getErrors().forEach(log::error);
+        log.info("End typechecking");
+
+        if (!typecheck.getErrorLogger().getErrors().isEmpty()) {
+            return;
+        }
+        CompilerVisitor compiler = new CompilerVisitor();
+        log.debug("instructions: \n{}", compiler.visit(tree));
+
+        log.info("generated code: \n{}", compiler.getInstructions(compiler.visit(tree)));
+
+        log.info("End compiling");
 
 
     }

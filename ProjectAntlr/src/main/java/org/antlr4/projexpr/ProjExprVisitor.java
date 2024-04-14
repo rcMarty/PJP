@@ -1,4 +1,4 @@
-// Generated from /home/rc_marty/6_Semestr/PJP/ProjectAntlr/src/main/antlr4/grammars/ProjExpr.g4 by ANTLR 4.13.1
+// Generated from /home/rc_marty/OneDrive/Dokumenty/_Škola/6_Semestr/PJP/ProjectAntlr/src/main/antlr4/grammars/ProjExpr.g4 by ANTLR 4.13.1
 package org.antlr4.projexpr;
 import org.antlr.v4.runtime.tree.ParseTreeVisitor;
 
@@ -16,69 +16,6 @@ public interface ProjExprVisitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitProg(ProjExprParser.ProgContext ctx);
-	/**
-	 * Visit a parse tree produced by the {@code block}
-	 * labeled alternative in {@link ProjExprParser#stat}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitBlock(ProjExprParser.BlockContext ctx);
-	/**
-	 * Visit a parse tree produced by the {@code write}
-	 * labeled alternative in {@link ProjExprParser#stat}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitWrite(ProjExprParser.WriteContext ctx);
-	/**
-	 * Visit a parse tree produced by the {@code declare}
-	 * labeled alternative in {@link ProjExprParser#stat}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitDeclare(ProjExprParser.DeclareContext ctx);
-	/**
-	 * Visit a parse tree produced by the {@code expression}
-	 * labeled alternative in {@link ProjExprParser#stat}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitExpression(ProjExprParser.ExpressionContext ctx);
-	/**
-	 * Visit a parse tree produced by the {@code read}
-	 * labeled alternative in {@link ProjExprParser#stat}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitRead(ProjExprParser.ReadContext ctx);
-	/**
-	 * Visit a parse tree produced by the {@code if}
-	 * labeled alternative in {@link ProjExprParser#stat}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitIf(ProjExprParser.IfContext ctx);
-	/**
-	 * Visit a parse tree produced by the {@code while}
-	 * labeled alternative in {@link ProjExprParser#stat}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitWhile(ProjExprParser.WhileContext ctx);
-	/**
-	 * Visit a parse tree produced by the {@code for}
-	 * labeled alternative in {@link ProjExprParser#stat}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitFor(ProjExprParser.ForContext ctx);
-	/**
-	 * Visit a parse tree produced by the {@code empty}
-	 * labeled alternative in {@link ProjExprParser#stat}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitEmpty(ProjExprParser.EmptyContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link ProjExprParser#writeStat}.
 	 * @param ctx the parse tree
@@ -110,6 +47,18 @@ public interface ProjExprVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitForStat(ProjExprParser.ForStatContext ctx);
 	/**
+	 * Visit a parse tree produced by {@link ProjExprParser#blockStat}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitBlockStat(ProjExprParser.BlockStatContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link ProjExprParser#exprStat}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitExprStat(ProjExprParser.ExprStatContext ctx);
+	/**
 	 * Visit a parse tree produced by {@link ProjExprParser#declareStat}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
@@ -121,6 +70,12 @@ public interface ProjExprVisitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitLiterals(ProjExprParser.LiteralsContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link ProjExprParser#statement}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitStatement(ProjExprParser.StatementContext ctx);
 	/**
 	 * Visit a parse tree produced by the {@code negation}
 	 * labeled alternative in {@link ProjExprParser#expr}.
