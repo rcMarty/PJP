@@ -68,7 +68,6 @@ public class CompilerVisitor extends ProjExprBaseVisitor<List<Instruction>> {
         String jmpTrue = LabelGenerator.getLabel("ifTrue");
         String jmpFalse = LabelGenerator.getLabel("ifFalse");
         instructions.add(Instruction.builder().instruction(InstructionType.FJMP).args(jmpTrue).build());
-        //handle if and optional else ifStat: 'if' '(' condition ')' statement ('else' statement)? ;
         instructions.addAll(visit(ctx.statement(0)));
         if (ctx.statement().size() > 1) {
             instructions.add(Instruction.builder().instruction(InstructionType.JMP).args(jmpFalse).build());
@@ -93,6 +92,64 @@ public class CompilerVisitor extends ProjExprBaseVisitor<List<Instruction>> {
         instructions.addAll(visit(ctx.statement()));
         instructions.add(Instruction.builder().instruction(InstructionType.JMP).args(jmpStart).build());
         instructions.add(Instruction.builder().instruction(InstructionType.LABEL).args(jmpEnd).build());
+        return instructions;
+    }
+
+    @Override
+    public List<Instruction> visitForStat(ProjExprParser.ForStatContext ctx) {
+        log.trace("{}Visiting \tforStat", "    ".repeat(ctx.depth()));
+        List<Instruction> instructions = new ArrayList<>(visit(ctx.expr(0)));
+        instructions.add(Instruction.builder().instruction(InstructionType.POP).build());
+        String jmpStart = LabelGenerator.getLabel("forStart");
+        String jmpEnd = LabelGenerator.getLabel("forEnd");
+        instructions.add(Instruction.builder().instruction(InstructionType.LABEL).args(jmpStart).build());
+        instructions.addAll(visit(ctx.condition()));
+        instructions.add(Instruction.builder().instruction(InstructionType.FJMP).args(jmpEnd).build());
+        instructions.addAll(visit(ctx.statement()));
+        instructions.addAll(visit(ctx.expr(1)));
+        instructions.add(Instruction.builder().instruction(InstructionType.POP).build());
+        instructions.add(Instruction.builder().instruction(InstructionType.JMP).args(jmpStart).build());
+        instructions.add(Instruction.builder().instruction(InstructionType.LABEL).args(jmpEnd).build());
+        return instructions;
+    }
+
+    @Override
+    public List<Instruction> visitTernary(ProjExprParser.TernaryContext ctx) {
+        log.trace("{}Visiting \tternary", "    ".repeat(ctx.depth()));
+        List<Instruction> instructions = new ArrayList<>(visit(ctx.expr(0)));
+
+
+        //check type of expr(1) and expr(2)
+        var expr1 = visit(ctx.expr(1));
+        var expr2 = visit(ctx.expr(2));
+
+        List<Instruction> tmp1 = new ArrayList<>();
+        List<Instruction> tmp2 = new ArrayList<>();
+
+        if (expr1.get(0).getType() != expr2.get(0).getType()) {
+            if (expr1.get(0).getType() == Types.INT) {
+                tmp1.addAll(expr1);
+                tmp1.add(Instruction.builder().instruction(InstructionType.ITOF).build());
+                tmp2.addAll(expr2);
+            } else {
+                tmp1.addAll(expr1);
+                tmp2.addAll(expr2);
+                tmp2.add(Instruction.builder().instruction(InstructionType.ITOF).build());
+            }
+        } else {
+            tmp1.addAll(expr1);
+            tmp2.addAll(expr2);
+        }
+
+
+        String jmpTrue = LabelGenerator.getLabel("ternaryTrue");
+        String jmpFalse = LabelGenerator.getLabel("ternaryFalse");
+        instructions.add(Instruction.builder().instruction(InstructionType.FJMP).args(jmpTrue).build());
+        instructions.addAll(tmp1);
+        instructions.add(Instruction.builder().instruction(InstructionType.JMP).args(jmpFalse).build());
+        instructions.add(Instruction.builder().instruction(InstructionType.LABEL).args(jmpTrue).build());
+        instructions.addAll(tmp2);
+        instructions.add(Instruction.builder().instruction(InstructionType.LABEL).args(jmpFalse).build());
         return instructions;
     }
 
@@ -129,7 +186,7 @@ public class CompilerVisitor extends ProjExprBaseVisitor<List<Instruction>> {
     public List<Instruction> visitWriteStat(ProjExprParser.WriteStatContext ctx) {
         log.trace("{}Visiting \twriteStat", "    ".repeat(ctx.depth()));
         List<Instruction> instructions = new ArrayList<>();
-        for (ProjExprParser.ExprContext expr : ctx.expr()) {
+        for (ProjExprParser.ExprContext expr : ctx.expr().reversed()) {
             instructions.addAll(visit(expr));
         }
         instructions.add(Instruction.builder().instruction(InstructionType.PRINT).args(ctx.expr().size()).build());
@@ -155,12 +212,15 @@ public class CompilerVisitor extends ProjExprBaseVisitor<List<Instruction>> {
     public List<Instruction> visitArithmetic(ProjExprParser.ArithmeticContext ctx) {
         log.trace("{}Visiting \tarithmetic {}", "    ".repeat(ctx.depth()), ctx.op.getText());
         List<Instruction> instructions = new ArrayList<>(optionalConvertToFloat(ctx.expr(0), ctx.expr(1)));
+        Types left = visit(ctx.expr(0)).getLast().getType();
+        Types right = visit(ctx.expr(1)).getLast().getType();
+        Types result = left == Types.FLOAT || right == Types.FLOAT ? Types.FLOAT : Types.INT;
 
         switch (ctx.op.getText()) {
-            case "+" -> instructions.add(Instruction.builder().instruction(InstructionType.ADD).build());
-            case "-" -> instructions.add(Instruction.builder().instruction(InstructionType.SUB).build());
-            case "*" -> instructions.add(Instruction.builder().instruction(InstructionType.MUL).build());
-            case "/" -> instructions.add(Instruction.builder().instruction(InstructionType.DIV).build());
+            case "+" -> instructions.add(Instruction.builder().instruction(InstructionType.ADD).type(result).build());
+            case "-" -> instructions.add(Instruction.builder().instruction(InstructionType.SUB).type(result).build());
+            case "*" -> instructions.add(Instruction.builder().instruction(InstructionType.MUL).type(result).build());
+            case "/" -> instructions.add(Instruction.builder().instruction(InstructionType.DIV).type(result).build());
         }
         return instructions;
     }
@@ -171,7 +231,7 @@ public class CompilerVisitor extends ProjExprBaseVisitor<List<Instruction>> {
         List<Instruction> instructions = new ArrayList<>();
         instructions.addAll(visit(ctx.expr(0)));
         instructions.addAll(visit(ctx.expr(1)));
-        instructions.add(Instruction.builder().instruction(InstructionType.MOD).build());
+        instructions.add(Instruction.builder().instruction(InstructionType.MOD).type(Types.INT).build());
         return instructions;
     }
 
@@ -179,7 +239,7 @@ public class CompilerVisitor extends ProjExprBaseVisitor<List<Instruction>> {
     public List<Instruction> visitNegation(ProjExprParser.NegationContext ctx) {
         log.trace("{}Visiting \tnegation", "    ".repeat(ctx.depth()));
         List<Instruction> instructions = new ArrayList<>(visit(ctx.expr()));
-        instructions.add(Instruction.builder().instruction(InstructionType.NOT).build());
+        instructions.add(Instruction.builder().instruction(InstructionType.NOT).type(Types.BOOL).build());
         return instructions;
     }
 
@@ -187,7 +247,8 @@ public class CompilerVisitor extends ProjExprBaseVisitor<List<Instruction>> {
     public List<Instruction> visitUnaryMinus(ProjExprParser.UnaryMinusContext ctx) {
         log.trace("{}Visiting \tunaryMinus", "    ".repeat(ctx.depth()));
         List<Instruction> instructions = new ArrayList<>(visit(ctx.expr()));
-        instructions.add(Instruction.builder().instruction(InstructionType.UMINUS).build());
+        Types type = visit(ctx.expr()).getLast().getType();
+        instructions.add(Instruction.builder().instruction(InstructionType.UMINUS).type(type).build());
         return instructions;
     }
 
@@ -197,7 +258,7 @@ public class CompilerVisitor extends ProjExprBaseVisitor<List<Instruction>> {
         List<Instruction> instructions = new ArrayList<>();
         instructions.addAll(visit(ctx.expr(0)));
         instructions.addAll(visit(ctx.expr(1)));
-        instructions.add(Instruction.builder().instruction(InstructionType.CONCAT).build());
+        instructions.add(Instruction.builder().instruction(InstructionType.CONCAT).type(Types.STRING).build());
         return instructions;
     }
 
@@ -205,11 +266,14 @@ public class CompilerVisitor extends ProjExprBaseVisitor<List<Instruction>> {
     public List<Instruction> visitRelational(ProjExprParser.RelationalContext ctx) {
         log.trace("{}Visiting \trelational {}", "    ".repeat(ctx.depth()), ctx.op.getText());
         List<Instruction> instructions = new ArrayList<>(optionalConvertToFloat(ctx.expr(0), ctx.expr(1)));
+        Types type1 = visit(ctx.expr(0)).getLast().getType();
+        Types type2 = visit(ctx.expr(1)).getLast().getType();
+        Types result = type1 == Types.FLOAT || type2 == Types.FLOAT ? Types.FLOAT : Types.INT;
 
 
         switch (ctx.op.getText()) {
-            case "<" -> instructions.add(Instruction.builder().instruction(InstructionType.LT).build());
-            case ">" -> instructions.add(Instruction.builder().instruction(InstructionType.GT).build());
+            case "<" -> instructions.add(Instruction.builder().instruction(InstructionType.LT).type(result).build());
+            case ">" -> instructions.add(Instruction.builder().instruction(InstructionType.GT).type(result).build());
         }
         return instructions;
     }
@@ -220,7 +284,7 @@ public class CompilerVisitor extends ProjExprBaseVisitor<List<Instruction>> {
         List<Instruction> instructions = new ArrayList<>();
         instructions.addAll(visit(ctx.expr(0)));
         instructions.addAll(visit(ctx.expr(1)));
-        instructions.add(Instruction.builder().instruction(InstructionType.AND).build());
+        instructions.add(Instruction.builder().instruction(InstructionType.AND).type(Types.BOOL).build());
         return instructions;
     }
 
@@ -230,7 +294,7 @@ public class CompilerVisitor extends ProjExprBaseVisitor<List<Instruction>> {
         List<Instruction> instructions = new ArrayList<>();
         instructions.addAll(visit(ctx.expr(0)));
         instructions.addAll(visit(ctx.expr(1)));
-        instructions.add(Instruction.builder().instruction(InstructionType.OR).build());
+        instructions.add(Instruction.builder().instruction(InstructionType.OR).type(Types.BOOL).build());
         return instructions;
     }
 
@@ -239,12 +303,15 @@ public class CompilerVisitor extends ProjExprBaseVisitor<List<Instruction>> {
         log.trace("{}Visiting \tcomparison {}", "    ".repeat(ctx.depth()), ctx.op.getText());
 
         List<Instruction> instructions = new ArrayList<>(optionalConvertToFloat(ctx.expr(0), ctx.expr(1)));
+        Types type1 = visit(ctx.expr(0)).getLast().getType();
+        Types type2 = visit(ctx.expr(1)).getLast().getType();
+        Types type = type1 == Types.FLOAT || type2 == Types.FLOAT ? Types.FLOAT : Types.INT;
 
         switch (ctx.op.getText()) {
             case "==" -> instructions.add(Instruction.builder().instruction(InstructionType.EQ).build());
             case "!=" -> {
-                instructions.add(Instruction.builder().instruction(InstructionType.NOT).build());
-                instructions.add(Instruction.builder().instruction(InstructionType.EQ).build());
+                instructions.add(Instruction.builder().instruction(InstructionType.EQ).type(type).build());
+                instructions.add(Instruction.builder().instruction(InstructionType.NOT).type(type).build());
             }
         }
         return instructions;
@@ -256,6 +323,7 @@ public class CompilerVisitor extends ProjExprBaseVisitor<List<Instruction>> {
         return visit(ctx.expr());
     }
 
+
     private List<Instruction> optionalConvertToFloat(ProjExprParser.ExprContext expr, ProjExprParser.ExprContext expr2) {
         List<Instruction> instructions = new ArrayList<>();
 
@@ -265,12 +333,12 @@ public class CompilerVisitor extends ProjExprBaseVisitor<List<Instruction>> {
         if (left.getType() != right.getType()) {
             if (left.getType() == Types.INT) {
                 instructions.addAll(visit(expr));
-                instructions.add(Instruction.builder().instruction(InstructionType.ITOF).build());
+                instructions.add(Instruction.builder().instruction(InstructionType.ITOF).type(Types.FLOAT).build());
                 instructions.addAll(visit(expr2));
             } else if (left.getType() == Types.FLOAT) {
                 instructions.addAll(visit(expr));
                 instructions.addAll(visit(expr2));
-                instructions.add(Instruction.builder().instruction(InstructionType.ITOF).build());
+                instructions.add(Instruction.builder().instruction(InstructionType.ITOF).type(Types.FLOAT).build());
             }
         } else {
             instructions.addAll(visit(expr));
@@ -284,10 +352,11 @@ public class CompilerVisitor extends ProjExprBaseVisitor<List<Instruction>> {
     @Override
     public List<Instruction> visitString(ProjExprParser.StringContext ctx) {
         log.trace("{}Visiting \tstring", "    ".repeat(ctx.depth()));
+        String text = ctx.getText().substring(1, ctx.getText().length() - 1);
         return List.of(Instruction.builder()
                 .instruction(InstructionType.PUSH)
                 .type(Types.STRING)
-                .args(ctx.getText())
+                .args(text)
                 .build());
     }
 

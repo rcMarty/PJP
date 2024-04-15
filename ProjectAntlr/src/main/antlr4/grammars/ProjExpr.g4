@@ -5,6 +5,8 @@ prog: (statement )+ EOF;
 writeStat: 'write' expr? (',' expr)* ;
 readStat: 'read' ID (',' ID)* ;
 
+condition: expr ;
+
 ifStat: 'if' '(' condition ')' statement ('else' statement)? ;
 whileStat: 'while' '(' condition ')' statement ;
 forStat: 'for' '(' expr ';' condition ';' expr ')' statement ;
@@ -14,6 +16,7 @@ blockStat: '{' statement* '}' ;
 exprStat: expr ;
 
 declareStat: literals ID (',' ID)* ;
+
 literals: 'int'
         | 'float'
         | 'string'
@@ -51,9 +54,6 @@ expr: '-' expr                          # unaryMinus
     | BOOL                              # bool
     | ID                                # id
     ;
-
-
-condition: expr ;
 
 INT : [0-9]+ ;
 FLOAT : [0-9]+ '.' [0-9]+ ;

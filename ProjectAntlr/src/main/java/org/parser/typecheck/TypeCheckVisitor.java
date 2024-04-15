@@ -16,8 +16,6 @@ public class TypeCheckVisitor extends ProjExprBaseVisitor<Types> {
     @Getter
     private final TypeErrorLogger errorLogger = TypeErrorLogger.getInstance();
 
-    //visitor by mohl vygenerovat instrukce
-
 
     // OPERATOR
     @Override

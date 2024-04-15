@@ -69,8 +69,10 @@ public class Main {
         }
         CompilerVisitor compiler = new CompilerVisitor();
         log.debug("instructions: \n{}", compiler.visit(tree));
-
         log.info("generated code: \n{}", compiler.getInstructions(compiler.visit(tree)));
+        VirtualMachine vm = new VirtualMachine(compiler.visit(tree));
+        log.info("Output: \n{}", vm.run());
+
 
         log.info("End compiling");
 

@@ -1,11 +1,10 @@
-int i;
-while (i < 10) {
-    i = i + 1;
-    write i;
-    if (i == 5) {
-        write "reeeee";
-    }
-    else {
-        write "no reeeee";
+write "Hello world";
+
+int a;
+while (a != 10) {
+    a = a + 1;
+    write "a je : " , a;
+    if (a == 5) {
+        write "a je 5, hurray";
     }
 }
