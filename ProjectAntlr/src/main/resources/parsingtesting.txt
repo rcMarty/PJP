@@ -1,10 +1,4 @@
-write "Hello world";
-
-int a;
-while (a != 10) {
-    a = a + 1;
-    write "a je : " , a;
-    if (a == 5) {
-        write "a je 5, hurray";
-    }
-}
+int b;
+write b;
+for (b = 2; b<10;b = b+2)
+    write "bbbb",b;

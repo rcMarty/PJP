@@ -1,13 +1,12 @@
 package org.parser;
+import lombok.extern.slf4j.Slf4j;
 import org.parser.compiler.Instruction;
 import org.parser.compiler.InstructionType;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Stack;
+import java.util.*;
 import java.util.stream.IntStream;
 
+@Slf4j
 public class VirtualMachine {
     private final Stack<Object> stack = new Stack<>();
     private final Map<String, Object> variables = new HashMap<>();
@@ -53,6 +52,7 @@ public class VirtualMachine {
                 case LABEL -> label(instruction);
                 case JMP -> jmp(instruction);
                 case FJMP -> fjmp(instruction);
+                case TJMP -> tjmp(instruction);
                 case PRINT -> output.append(print(instruction)).append("\n");
                 case READ -> read(instruction);
             }
@@ -133,8 +133,8 @@ public class VirtualMachine {
         Object a = stack.pop();
         Object b = stack.pop();
         switch (instruction.getType()) {
-            case INT -> stack.push((int) a > (int) b);
-            case FLOAT -> stack.push((float) a > (float) b);
+            case INT -> stack.push((int) a < (int) b);
+            case FLOAT -> stack.push((float) a < (float) b);
         }
     }
 
@@ -142,8 +142,8 @@ public class VirtualMachine {
         Object a = stack.pop();
         Object b = stack.pop();
         switch (instruction.getType()) {
-            case INT -> stack.push((int) a < (int) b);
-            case FLOAT -> stack.push((float) a < (float) b);
+            case INT -> stack.push((int) a > (int) b);
+            case FLOAT -> stack.push((float) a > (float) b);
         }
     }
 
@@ -192,6 +192,11 @@ public class VirtualMachine {
             pc = labels.get((String) instruction.getArgs());
         }
     }
+    private void tjmp(Instruction instruction) {
+        if ((boolean) stack.pop()) {
+            pc = labels.get((String) instruction.getArgs());
+        }
+    }
 
     private String print(Instruction instruction) {
         StringBuilder output = new StringBuilder();
@@ -202,12 +207,22 @@ public class VirtualMachine {
     }
 
     private void read(Instruction instruction) {
-        String a = System.console().readLine();
-        switch (instruction.getType()) {
-            case INT -> stack.push(Integer.parseInt(a));
-            case FLOAT -> stack.push(Float.parseFloat(a));
-            case BOOL -> stack.push(Boolean.parseBoolean(a));
-            case STRING -> stack.push(a);
+        boolean success = false;
+        log.info("Enter value of type {}", instruction.getType());
+        while(!success) {
+            try {
+                Scanner scanner = new Scanner(System.in);
+                String a = scanner.nextLine();
+                switch (instruction.getType()) {
+                    case INT -> stack.push(Integer.parseInt(a));
+                    case FLOAT -> stack.push(Float.parseFloat(a));
+                    case BOOL -> stack.push(Boolean.parseBoolean(a));
+                    case STRING -> stack.push(a);
+                }
+                success = true;
+            } catch (Exception e) {
+                log.error("Invalid input, try again");
+            }
         }
     }
 

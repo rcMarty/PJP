@@ -6,6 +6,6 @@ public enum InstructionType {
     GT, LT, EQ, NOT,
     ITOF,
     PUSH, POP, LOAD, SAVE,
-    LABEL, JMP, FJMP,
+    LABEL, JMP, FJMP, TJMP,
     PRINT, READ,
 }

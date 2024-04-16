@@ -67,12 +67,15 @@ public class CompilerVisitor extends ProjExprBaseVisitor<List<Instruction>> {
         List<Instruction> instructions = new ArrayList<>(visit(ctx.condition()));
         String jmpTrue = LabelGenerator.getLabel("ifTrue");
         String jmpFalse = LabelGenerator.getLabel("ifFalse");
-        instructions.add(Instruction.builder().instruction(InstructionType.FJMP).args(jmpTrue).build());
-        instructions.addAll(visit(ctx.statement(0)));
+        instructions.add(Instruction.builder().instruction(InstructionType.TJMP).args(jmpTrue).build());
+        //instructions.addAll(visit(ctx.statement(0)));
         if (ctx.statement().size() > 1) {
+            instructions.addAll(visit(ctx.statement(1)));
+        }
+        else{// (ctx.statement().size() > 1) {
             instructions.add(Instruction.builder().instruction(InstructionType.JMP).args(jmpFalse).build());
             instructions.add(Instruction.builder().instruction(InstructionType.LABEL).args(jmpTrue).build());
-            instructions.addAll(visit(ctx.statement(1)));
+            instructions.addAll(visit(ctx.statement(0)));
             instructions.add(Instruction.builder().instruction(InstructionType.LABEL).args(jmpFalse).build());
             return instructions;
         }
@@ -83,15 +86,22 @@ public class CompilerVisitor extends ProjExprBaseVisitor<List<Instruction>> {
     @Override
     public List<Instruction> visitWhileStat(ProjExprParser.WhileStatContext ctx) {
         log.trace("{}Visiting \twhileStat", "    ".repeat(ctx.depth()));
-        String jmpStart = LabelGenerator.getLabel("whileStart");
+        String jmpIf = LabelGenerator.getLabel("whileStart");
         List<Instruction> instructions = new ArrayList<>();
         String jmpEnd = LabelGenerator.getLabel("whileEnd");
-        instructions.add(Instruction.builder().instruction(InstructionType.LABEL).args(jmpStart).build());
+        String jmpTrueEnd = LabelGenerator.getLabel("whileTrueEnd");
+
+        instructions.add(Instruction.builder().instruction(InstructionType.LABEL).args(jmpIf).build());
         instructions.addAll(visit(ctx.condition()));
-        instructions.add(Instruction.builder().instruction(InstructionType.FJMP).args(jmpEnd).build());
-        instructions.addAll(visit(ctx.statement()));
-        instructions.add(Instruction.builder().instruction(InstructionType.JMP).args(jmpStart).build());
+
+        instructions.add(Instruction.builder().instruction(InstructionType.TJMP).args(jmpEnd).build());
+        instructions.add(Instruction.builder().instruction(InstructionType.JMP).args(jmpTrueEnd).build());
         instructions.add(Instruction.builder().instruction(InstructionType.LABEL).args(jmpEnd).build());
+
+        instructions.addAll(visit(ctx.statement()));
+        instructions.add(Instruction.builder().instruction(InstructionType.JMP).args(jmpIf).build());
+        instructions.add(Instruction.builder().instruction(InstructionType.LABEL).args(jmpTrueEnd).build());
+
         return instructions;
     }
 
@@ -327,8 +337,8 @@ public class CompilerVisitor extends ProjExprBaseVisitor<List<Instruction>> {
     private List<Instruction> optionalConvertToFloat(ProjExprParser.ExprContext expr, ProjExprParser.ExprContext expr2) {
         List<Instruction> instructions = new ArrayList<>();
 
-        Instruction left = visit(expr).getFirst();
-        Instruction right = visit(expr2).getFirst();
+        Instruction left = visit(expr).getLast();
+        Instruction right = visit(expr2).getLast();
 
         if (left.getType() != right.getType()) {
             if (left.getType() == Types.INT) {
